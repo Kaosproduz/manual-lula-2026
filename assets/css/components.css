@@ -102,6 +102,34 @@
   white-space: nowrap;
 }
 
+.spec-card__download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--color-text);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.spec-card__download:hover {
+  background: var(--color-accent-dark);
+}
+
+.spec-card__download .icon {
+  width: 14px;
+  height: 14px;
+}
+
 .spec-card ul {
   list-style: none;
   display: grid;
