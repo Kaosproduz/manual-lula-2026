@@ -26,6 +26,8 @@
   <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
   <symbol id="icon-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></symbol>
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="icon-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
 </svg>
 
 <div class="app-shell">
@@ -64,6 +66,7 @@
             <li><a class="nav-sub__link" href="#som">Sistema de som</a></li>
             <li><a class="nav-sub__link" href="#iluminacao">Iluminação</a></li>
             <li><a class="nav-sub__link" href="#led-video">Painéis LED / vídeo</a></li>
+            <li><a class="nav-sub__link" href="#esquema-conexao">Esquema de conexão</a></li>
             <li><a class="nav-sub__link" href="#internet">Internet</a></li>
             <li><a class="nav-sub__link" href="#teleprompter">Teleprompter</a></li>
             <li><a class="nav-sub__link" href="#comunicacao">Comunicação / rádios</a></li>
@@ -504,25 +507,60 @@
       <div class="subsection" id="led-video">
         <h3 class="subsection__title"><span class="num">3.4</span> Painéis LED / vídeo</h3>
         <div class="spec-grid">
-          <div class="spec-card">
-            <div class="spec-card__title">Configuração — Palco 1 (5 painéis)</div>
-            <ul>
-              <li>Fundo de palco: 14m (L) × 8m (A)</li>
-              <li>4× laterais: 4,5×8m (formam 2 telas em V)</li>
-            </ul>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image" type="button" data-full="assets/img/palco-1/palco-1-drone-05.jpg" data-caption="Palco 1 — vista geral (sem fundo de palco)">
+              <img src="assets/img/palco-1/palco-1-drone-05.jpg" alt="Render aéreo do Palco 1, mostrando as duas telas laterais em V, sem tela de fundo">
+              <span class="gallery__caption">Palco 1</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Palco 1 (4 painéis)<span class="spec-card__meta">144 m²</span></div>
+              <ul>
+                <li>4× laterais: 4,5×8m (formam 2 telas em V)</li>
+                <li>Sem fundo de palco e sem delay</li>
+              </ul>
+            </div>
           </div>
-          <div class="spec-card">
-            <div class="spec-card__title">Configuração — Palco 2 (4 painéis)</div>
-            <ul>
-              <li>4× laterais: 4,5×8m (formam 2 telas em V)</li>
-              <li>Sem fundo de palco e sem delay</li>
-            </ul>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image" type="button" data-full="assets/img/palco-2/palco-2-drone-05.jpg" data-caption="Palco 2 — vista geral (com fundo de palco)">
+              <img src="assets/img/palco-2/palco-2-drone-05.jpg" alt="Render aéreo do Palco 2, mostrando as telas laterais em V e a tela de fundo de palco">
+              <span class="gallery__caption">Palco 2</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Palco 2 (5 painéis)<span class="spec-card__meta">256 m²</span></div>
+              <ul>
+                <li>Fundo de palco: 14m (L) × 8m (A)</li>
+                <li>4× laterais: 4,5×8m (formam 2 telas em V)</li>
+              </ul>
+            </div>
           </div>
-          <div class="spec-card">
-            <div class="spec-card__title">Painéis delay</div>
-            <ul>
-              <li>2× delay: 4,5×8m — quando aplicável, em qualquer um dos palcos</li>
-            </ul>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image" type="button" data-full="assets/img/palco-2/palco-2-drone-08.jpg" data-caption="Palco 2 — vista da torre de delay na plateia">
+              <img src="assets/img/palco-2/palco-2-drone-08.jpg" alt="Render de torre de delay de LED posicionada no meio do público, Palco 2">
+              <span class="gallery__caption">Delay</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Painéis delay (quando aplicável)<span class="spec-card__meta">72 m²</span></div>
+              <ul>
+                <li>2× delay: 4,5×8m</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image" type="button" data-full="assets/img/palco-1/palco-1-drone-07.jpg" data-caption="Detalhe da imagem nas telas laterais — válido para Palco 1 e Palco 2">
+              <img src="assets/img/palco-1/palco-1-drone-07.jpg" alt="Detalhe aproximado do conteúdo exibido nas telas laterais em V">
+              <span class="gallery__caption">Detalhe</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Detalhe da Imagem</div>
+              <ul>
+                <li>Aproximação do conteúdo nas telas laterais em V</li>
+                <li>Válido para Palco 1 e Palco 2</li>
+              </ul>
+            </div>
           </div>
           <div class="spec-card">
             <div class="spec-card__title">Especificações técnicas</div>
@@ -533,22 +571,148 @@
             </ul>
           </div>
           <div class="spec-card">
-            <div class="spec-card__title">Servidores</div>
+            <div class="spec-card__title">Servidores — Main e Backup</div>
             <ul>
               <li>Desktop Windows 11 (notebook proibido)</li>
-              <li>Intel i9/i7 (12ª–14ª geração) · RAM 32–64GB</li>
-              <li>NVIDIA RTX série 40/50 · SSD NVMe 1TB livre</li>
+              <li>Intel i9/i7 (12ª–14ª geração)</li>
+              <li>RAM 32–64GB</li>
+              <li>NVIDIA RTX série 40/50</li>
+              <li>SSD NVMe 1TB livre</li>
+              <li>Placa de captura Blackmagic — mín. 2 entradas
+                <ul>
+                  <li>DeckLink 4K Extreme 12G — 2 entradas, até 4K</li>
+                  <li>DeckLink Duo 2 — 4 entradas, até 1080p</li>
+                  <li>DeckLink 8K Pro Mini — 4 entradas, até 8K</li>
+                  <li>DeckLink 8K Pro G2 — 4 entradas, até 8K</li>
+                </ul>
+              </li>
               <li>Resolume Arena 7 + Stage Flow</li>
             </ul>
           </div>
           <div class="spec-card">
             <div class="spec-card__title">Gerenciamento de Vídeo</div>
             <ul>
-              <li>NovaStar H5 ou H9, com backup</li>
-              <li>Mín. 6 inputs e 6 outputs em 4K</li>
-              <li>04 conversores HDMI ↔ SDI 3G bidirecionais</li>
+              <li>NovaStar H5 ou H9, ou E2</li>
+              <li>Total de entradas: 9
+                <ul>
+                  <li>3× Servidor Main (HDMI/DisplayPort)</li>
+                  <li>3× Servidor Backup (HDMI/DisplayPort)</li>
+                  <li>Câmera PGM (SDI/HDMI)</li>
+                  <li>Libras (SDI/HDMI)</li>
+                  <li>Timer (HDMI/DisplayPort)</li>
+                </ul>
+              </li>
+              <li>Total de saídas: 7
+                <ul>
+                  <li>Saída Ethernet (RJ45) — para os painéis LED (Palco 1 / Palco 2 / Delay)</li>
+                  <li>Volta de PGM — Resolume Main</li>
+                  <li>Volta de PGM — Resolume Backup</li>
+                  <li>Volta de Libras — Resolume Main</li>
+                  <li>Volta de Libras — Resolume Backup</li>
+                  <li>Mandada para TVs de retorno</li>
+                  <li>Saída Multiview</li>
+                </ul>
+              </li>
             </ul>
           </div>
+        </div>
+
+        <h4 id="esquema-conexao" class="subsection__subtitle">Esquema de conexão</h4>
+        <p class="section__lede" style="margin-bottom:8px;">Fluxo de sinal de vídeo: das entradas (inputs) até os painéis de cada palco.</p>
+        <button class="wire-diagram-frame" type="button" aria-label="Ampliar esquemático de conexão">
+          <div class="wire-diagram">
+            <svg class="wire-diagram__svg" viewBox="0 0 1160 460" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
+              <defs>
+                <marker id="arrow-ida" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="wire-arrow--ida" d="M0,0 L10,5 L0,10 z"/></marker>
+                <marker id="arrow-volta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="wire-arrow--volta" d="M0,0 L10,5 L0,10 z"/></marker>
+                <marker id="arrow-led" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="wire-arrow--led" d="M0,0 L10,5 L0,10 z"/></marker>
+                <marker id="arrow-tv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="wire-arrow--tv" d="M0,0 L10,5 L0,10 z"/></marker>
+              </defs>
+
+              <!-- Servidor Main: feixe de 5 (3 idas + 2 voltas) -->
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,30   C360,30   360,103   520,103"/>
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,42.5 C360,42.5 360,119   520,119"/>
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,55   C360,55   360,135   520,135"/>
+              <path class="wire--volta" marker-end="url(#arrow-volta)" d="M520,151 C360,151 360,67.5 200,67.5"/>
+              <path class="wire--volta" marker-end="url(#arrow-volta)" d="M520,167 C360,167 360,80   200,80"/>
+
+              <!-- Servidor Backup: feixe de 5 (3 idas + 2 voltas) -->
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,114   C360,114   360,183   520,183"/>
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,126.5 C360,126.5 360,199   520,199"/>
+              <path class="wire--ida"   marker-end="url(#arrow-ida)"   d="M200,139   C360,139   360,215   520,215"/>
+              <path class="wire--volta" marker-end="url(#arrow-volta)" d="M520,231 C360,231 360,151.5 200,151.5"/>
+              <path class="wire--volta" marker-end="url(#arrow-volta)" d="M520,247 C360,247 360,164   200,164"/>
+
+              <!-- Câmera PGM / Libras / Timer: 1 ida cada -->
+              <path class="wire--ida" marker-end="url(#arrow-ida)" d="M200,215 C360,215 360,263 520,263"/>
+              <path class="wire--ida" marker-end="url(#arrow-ida)" d="M200,283 C360,283 360,279 520,279"/>
+              <path class="wire--ida" marker-end="url(#arrow-ida)" d="M200,351 C360,351 360,295 520,295"/>
+
+              <!-- Saídas: Gerenciamento -> Painéis de LED / Splitter 4K -> TVs -->
+              <path class="wire--led" marker-end="url(#arrow-led)" d="M700,140 C740,140 740,171 780,171"/>
+              <path class="wire--tv"  marker-end="url(#arrow-tv)"  d="M700,260 C740,260 740,241 780,241"/>
+              <path class="wire--tv"  marker-end="url(#arrow-tv)"  d="M940,241 C970,241 970,241 1000,241"/>
+            </svg>
+
+            <div class="flow-node wire-node" style="left:20px; top:20px; width:180px; height:70px;">
+              <strong>Servidor Main</strong><small>3× · HDMI/DisplayPort</small>
+            </div>
+            <div class="flow-node wire-node" style="left:20px; top:104px; width:180px; height:70px;">
+              <strong>Servidor Backup</strong><small>3× · HDMI/DisplayPort</small>
+            </div>
+            <div class="flow-node wire-node" style="left:20px; top:188px; width:180px; height:54px;">
+              <strong>Câmera PGM</strong><small>SDI/HDMI</small>
+            </div>
+            <div class="flow-node wire-node" style="left:20px; top:256px; width:180px; height:54px;">
+              <strong>Libras</strong><small>SDI/HDMI</small>
+            </div>
+            <div class="flow-node wire-node" style="left:20px; top:324px; width:180px; height:54px;">
+              <strong>Timer</strong><small>HDMI/DisplayPort</small>
+            </div>
+
+            <div class="flow-node flow-node--accent wire-node" style="left:520px; top:89px; width:180px; height:220px;">
+              <strong>Gerenciamento de Vídeo</strong><small>NovaStar H5/H9 ou E2</small>
+            </div>
+
+            <div class="flow-node wire-node" style="left:780px; top:144px; width:160px; height:54px;">
+              <strong>Painéis de LED</strong>
+            </div>
+            <div class="flow-node wire-node" style="left:780px; top:214px; width:160px; height:54px;">
+              <strong>Splitter 4K</strong><small>HDMI 1x4</small>
+            </div>
+            <div class="flow-node wire-node" style="left:1000px; top:214px; width:140px; height:54px;">
+              <strong>TVs</strong>
+            </div>
+          </div>
+          <span class="wire-diagram-frame__hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+        </button>
+
+        <div class="wire-legend">
+          <span class="wire-legend__item"><svg class="wire-legend__line" viewBox="0 0 26 8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" class="wire--ida"/></svg>Ida (entradas)</span>
+          <span class="wire-legend__item"><svg class="wire-legend__line" viewBox="0 0 26 8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" class="wire--volta"/></svg>Volta (PGM/Libras)</span>
+          <span class="wire-legend__item"><svg class="wire-legend__line" viewBox="0 0 26 8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" class="wire--led"/></svg>Saída p/ painéis</span>
+          <span class="wire-legend__item"><svg class="wire-legend__line" viewBox="0 0 26 8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" class="wire--tv"/></svg>Saída p/ TVs</span>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card__title">Outros materiais</div>
+          <ul>
+            <li>01 notebook com software de timer</li>
+            <li>04 conversores HDMI ↔ SDI 3G bidirecionais</li>
+            <li>Splitter HDMI 1x4 4K</li>
+            <li>Cabos e fibras ópticas</li>
+            <li>Adaptadores diversos</li>
+            <li>Distribuição de energia extra para o sistema</li>
+          </ul>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-card__title">Equipe</div>
+          <ul>
+            <li>Técnico de processamento</li>
+            <li>Técnico de painel</li>
+          </ul>
+          <p class="spec-card__note">Disponíveis em todos os testes, ensaios e no evento</p>
         </div>
       </div>
 
@@ -969,7 +1133,28 @@
   </main>
 </div>
 
+<!-- Lightbox (compartilhado por todas as galerias do documento) -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada">
+    <svg class="icon"><use href="#icon-x"/></svg>
+  </button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+</div>
+
+<!-- Lightbox de diagramas (clona o conteúdo do esquemático em tamanho real) -->
+<div class="lightbox" id="diagram-lightbox">
+  <button class="lightbox__close" type="button" aria-label="Fechar diagrama ampliado">
+    <svg class="icon"><use href="#icon-x"/></svg>
+  </button>
+  <div class="lightbox__diagram-content"></div>
+</div>
+
 <script src="assets/js/main.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script src="assets/js/diagram-lightbox.js"></script>
 <script src="assets/js/export-pdf.js"></script>
 </body>
 </html>

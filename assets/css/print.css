@@ -25,8 +25,20 @@
   .sidebar,
   .btn-export,
   .mobile-topbar,
-  .scroll-top {
+  .scroll-top,
+  .lightbox,
+  .gallery__zoom-hint,
+  .wire-diagram-frame__hint {
     display: none !important;
+  }
+
+  .wire-diagram-frame {
+    cursor: default;
+  }
+
+  .gallery,
+  .wire-diagram-frame {
+    break-inside: avoid-page;
   }
 
   .app-shell {

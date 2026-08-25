@@ -77,6 +77,10 @@
 }
 
 .spec-card__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
   font-family: var(--font-display);
   font-size: 14px;
   font-weight: 600;
@@ -86,6 +90,16 @@
   margin-bottom: 10px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--color-surface);
+}
+
+.spec-card__meta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .spec-card ul {
@@ -115,10 +129,48 @@
   color: var(--color-text);
 }
 
+.spec-card li ul {
+  list-style: none;
+  display: grid;
+  gap: 3px;
+  margin-top: 5px;
+  padding-left: 4px;
+}
+
+.spec-card li ul li {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.spec-card li ul li::before {
+  background: var(--color-text-muted);
+  width: 4px;
+  height: 4px;
+  top: 6px;
+}
+
 .spec-card p.spec-card__note {
   font-size: 13px;
   color: var(--color-text-muted);
   margin: 6px 0 0;
+}
+
+/* Variante: card com imagem no topo (thumb) e specs embaixo */
+
+.spec-card--media {
+  padding: 0;
+  overflow: hidden;
+}
+
+.spec-card--media .spec-card__image {
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+.spec-card--media .spec-card__body {
+  padding: 16px 20px 18px;
 }
 
 /* ---- Bloco de proibição / atenção ---- */
@@ -308,6 +360,313 @@ table.data-table {
   border: 1px dashed var(--color-border);
   border-radius: var(--radius);
   padding: 10px 14px;
+}
+
+/* ---- Esquemático de conexão (fluxo servidor → processamento → painéis) ---- */
+
+.flow-node {
+  position: relative;
+  background: var(--white);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  text-align: center;
+  box-shadow: var(--shadow-box);
+}
+
+.flow-node strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 2px;
+}
+
+.flow-node small {
+  color: var(--color-text-muted);
+  font-size: 11.5px;
+}
+
+.flow-node--accent {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: var(--white);
+}
+
+.flow-node--accent strong {
+  color: var(--yellow);
+}
+
+.flow-node--accent small {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ---- Diagrama de fiação (curvas reais conectando os nós) ---- */
+
+.wire-diagram-frame {
+  display: block;
+  position: relative;
+  width: 820px;
+  max-width: 100%;
+  height: 325px;
+  overflow: hidden;
+  margin: 18px 0 8px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: zoom-in;
+  background: var(--white);
+  font: inherit;
+  text-align: left;
+  appearance: none;
+}
+
+.wire-diagram-frame .wire-diagram {
+  transform: scale(0.7069);
+  transform-origin: 0 0;
+}
+
+.wire-diagram-frame__hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.wire-diagram-frame__hint .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.wire-diagram-frame:hover .wire-diagram-frame__hint,
+.wire-diagram-frame:focus-visible .wire-diagram-frame__hint {
+  opacity: 1;
+}
+
+.lightbox__diagram-content {
+  max-width: 100%;
+  max-height: 82vh;
+  overflow: auto;
+  padding: 10px;
+  background: var(--white);
+  border-radius: 4px;
+}
+
+.wire-diagram {
+  position: relative;
+  width: 1160px;
+  height: 460px;
+}
+
+.wire-diagram__svg {
+  position: absolute;
+  inset: 0;
+  width: 1160px;
+  height: 460px;
+}
+
+.wire--ida, .wire--volta, .wire--led, .wire--tv {
+  fill: none;
+  stroke-width: 2;
+}
+
+.wire--ida { stroke: var(--color-accent); }
+.wire--volta { stroke: var(--blue); }
+.wire--led { stroke: var(--green-dark); stroke-width: 2.5; stroke-dasharray: 9 6; }
+.wire--tv { stroke: var(--purple); }
+
+.wire-arrow--ida { fill: var(--color-accent); }
+.wire-arrow--volta { fill: var(--blue); }
+.wire-arrow--led { fill: var(--green-dark); }
+.wire-arrow--tv { fill: var(--purple); }
+
+.wire-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  padding: 0 4px;
+  margin-top: -6px;
+}
+
+.wire-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.wire-legend__line {
+  width: 26px;
+  height: 8px;
+  flex: none;
+  overflow: visible;
+}
+
+.wire-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Galeria de imagens (thumbs com hover + lightbox ao clicar) ---- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+
+.gallery__item {
+  position: relative;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  box-shadow: var(--shadow-card);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.gallery__item:hover img,
+.gallery__item:focus-visible img {
+  transform: scale(1.08);
+}
+
+.gallery__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 10px 12px 8px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.gallery__zoom-hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  border-radius: 50%;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gallery__item:hover .gallery__zoom-hint,
+.gallery__item:focus-visible .gallery__zoom-hint {
+  opacity: 1;
+}
+
+.gallery__zoom-hint .icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* Lightbox */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 8, 8, 0.92);
+  padding: 40px;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox__figure {
+  max-width: min(1200px, 100%);
+  max-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox__caption {
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.lightbox__close:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.lightbox__close .icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* ---- Rodapé do documento ---- */
