@@ -22,7 +22,12 @@
   <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
   <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
   <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="icon-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></symbol>
   <symbol id="icon-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="icon-tent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><line x1="12" y1="3" x2="12" y2="20"/><line x1="7" y1="20" x2="9.5" y2="12"/><line x1="17" y1="20" x2="14.5" y2="12"/></symbol>
+  <symbol id="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="icon-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
 </svg>
 
 <div class="app-shell">
@@ -48,6 +53,7 @@
             <li><a class="nav-sub__link" href="#trios-eletricos">Trios elétricos</a></li>
             <li><a class="nav-sub__link" href="#veiculos">Veículos</a></li>
             <li><a class="nav-sub__link" href="#area-imprensa">Área coletiva de imprensa</a></li>
+            <li><a class="nav-sub__link" href="#comboio-trajeto">Comboio e trajeto</a></li>
           </ul>
         </li>
 
@@ -103,7 +109,7 @@
         <div class="stat-chip"><span class="stat-chip__value">≤ 2 km</span><span class="stat-chip__label">Trajeto total</span></div>
         <div class="stat-chip"><span class="stat-chip__value">2</span><span class="stat-chip__label">Ambulâncias básicas</span></div>
         <div class="stat-chip"><span class="stat-chip__value">110 dB</span><span class="stat-chip__label">Nível mínimo de PA</span></div>
-        <div class="stat-chip"><span class="stat-chip__value">50MB</span><span class="stat-chip__label">Internet mínima (cabeado + Wi-Fi)</span></div>
+        <div class="stat-chip"><span class="stat-chip__value">200MB</span><span class="stat-chip__label">Internet mínima em todo o trajeto</span></div>
       </div>
     </header>
 
@@ -135,7 +141,7 @@
         <h3 class="subsection__title"><span class="num">2.1</span> Trios elétricos</h3>
         <div class="spec-grid">
           <div class="spec-card">
-            <div class="spec-card__title">Trio discurso — fala do Presidente</div>
+            <div class="spec-card__title">Trio Discurso — fala do Presidente</div>
             <ul>
               <li>Posição: estacionado no ponto final do trajeto</li>
               <li>Área de palco: 10m (L) × 5m (P)</li>
@@ -146,7 +152,7 @@
             </ul>
           </div>
           <div class="spec-card">
-            <div class="spec-card__title">Trio imprensa/som — acompanha o deslocamento</div>
+            <div class="spec-card__title">Trio Jornalistas — acompanha o deslocamento</div>
             <ul>
               <li>Área de palco: 10m (L) × 5m (P)</li>
               <li>Capacidade: 50 pessoas</li>
@@ -160,27 +166,45 @@
           <svg class="icon"><use href="#icon-alert-triangle"/></svg>
           <span>Trios elétricos devem conter escadas de acesso desde o nível do chão, obrigatoriamente.</span>
         </div>
+        <div class="callout callout--danger">
+          <svg class="icon"><use href="#icon-x-circle"/></svg>
+          <span>Proibido trio elétrico do tipo prancha.</span>
+        </div>
       </div>
 
       <div class="subsection" id="veiculos">
         <h3 class="subsection__title"><span class="num">2.2</span> Veículos</h3>
+        <h4 class="subsection__subtitle">Caminhonete Presidente — Principal e Reserva</h4>
         <div class="spec-grid">
-          <div class="spec-card">
-            <div class="spec-card__title">Caminhonete Presidente</div>
-            <ul>
-              <li>Cabine dupla, caçamba aberta com maior capacidade</li>
-              <li>Estribos, Santo Antônio, estrutura de ferro tipo "gaiola"</li>
-              <li>Cobertura acrílica transparente, 3mm de espessura</li>
-              <li>Escada de acesso à caçamba, posicionada durante o deslocamento</li>
-            </ul>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image spec-card__image--square" type="button" data-full="assets/img/caminhonete/caminhonete-frente.jpg" data-caption="Caminhonete Presidente — vista frontal/aérea">
+              <img src="assets/img/caminhonete/caminhonete-frente.jpg" alt="Pickup vermelha com adesivo LULA no teto, bandeira do Brasil no capô, estribos e estrutura de gaiola na caçamba">
+              <span class="gallery__caption">Vista frontal</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Vista Frontal</div>
+              <ul>
+                <li>Cabine dupla, caçamba aberta com maior capacidade</li>
+                <li>Estribos, Santo Antônio, estrutura de ferro tipo "gaiola"</li>
+                <li>4 postes nos cantos da caçamba, conectados por 4 barras horizontais (sem barra superior)</li>
+                <li>Adesivo no teto e bandeira do Brasil adesivada no capô</li>
+              </ul>
+            </div>
           </div>
-          <div class="spec-card">
-            <div class="spec-card__title">Caminhonete reserva PR</div>
-            <ul>
-              <li>Mesma especificação da caminhonete do Presidente</li>
-              <li>Cabine dupla, caçamba aberta, estribos, Santo Antônio</li>
-              <li>Estrutura "gaiola" e cobertura acrílica 3mm</li>
-            </ul>
+          <div class="spec-card spec-card--media">
+            <button class="gallery__item spec-card__image spec-card__image--square" type="button" data-full="assets/img/caminhonete/caminhonete-traseira.jpg" data-caption="Caminhonete Presidente — vista traseira, acesso à caçamba">
+              <img src="assets/img/caminhonete/caminhonete-traseira.jpg" alt="Vista traseira da pickup com tampa da caçamba aberta, degrau vermelho de acesso e degrau menor perto da cabine">
+              <span class="gallery__caption">Vista traseira</span>
+              <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+            </button>
+            <div class="spec-card__body">
+              <div class="spec-card__title">Acesso à caçamba</div>
+              <ul>
+                <li>Degrau sólido de 2 degraus, revestido de vermelho, apoiado na rua junto à tampa aberta</li>
+                <li>Segundo degrau (2 degraus, mesmo revestimento) posicionado no fundo da caçamba, perto da cabine</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="callout">
@@ -190,14 +214,15 @@
       </div>
 
       <div class="subsection" id="area-imprensa">
-        <h3 class="subsection__title"><span class="num">2.3</span> Área coletiva de imprensa</h3>
+        <h3 class="subsection__title"><span class="num">2.3</span> Área coletiva de imprensa — "Quebra Queixo"</h3>
         <p class="section__lede" style="margin-bottom:16px;">Local fechado, montado no início do trajeto para declaração inicial do Presidente.</p>
         <div class="spec-grid">
           <div class="spec-card">
             <div class="spec-card__title">Estrutura</div>
             <ul>
+              <li>1× tenda</li>
               <li>1× backdrop 2m (altura) × 3m (comprimento)</li>
-              <li>1× púlpito de acrílico</li>
+              <li>1× púlpito de microfones (acrílico)</li>
             </ul>
           </div>
           <div class="spec-card">
@@ -216,6 +241,85 @@
             </ul>
           </div>
         </div>
+      </div>
+
+      <div class="subsection" id="comboio-trajeto">
+        <h3 class="subsection__title"><span class="num">2.4</span> Comboio e trajeto — vista aérea esquemática</h3>
+        <div class="aerial-diagram-wrap">
+          <svg viewBox="0 0 1000 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mapa esquemático do trajeto: Quebra Queixo, comboio em fila e Praça com Trio Discurso">
+
+            <!-- quarteirões (decorativo, contexto de cidade) -->
+            <rect class="aerial-block" x="30" y="18" width="60" height="40" rx="3"/>
+            <rect class="aerial-block" x="115" y="26" width="50" height="34" rx="3"/>
+            <rect class="aerial-block" x="24" y="262" width="55" height="46" rx="3"/>
+            <rect class="aerial-block" x="108" y="272" width="46" height="36" rx="3"/>
+            <rect class="aerial-block" x="300" y="16" width="55" height="32" rx="3"/>
+            <rect class="aerial-block" x="452" y="12" width="60" height="34" rx="3"/>
+            <rect class="aerial-block" x="600" y="18" width="50" height="32" rx="3"/>
+            <rect class="aerial-block" x="285" y="288" width="55" height="32" rx="3"/>
+            <rect class="aerial-block" x="435" y="292" width="60" height="30" rx="3"/>
+            <rect class="aerial-block" x="600" y="288" width="50" height="32" rx="3"/>
+            <rect class="aerial-block" x="905" y="8" width="80" height="42" rx="3"/>
+            <rect class="aerial-block" x="905" y="288" width="80" height="38" rx="3"/>
+
+            <!-- rua -->
+            <rect class="aerial-road" x="170" y="150" width="660" height="40" rx="2"/>
+            <line class="aerial-road__line" x1="170" y1="170" x2="830" y2="170"/>
+            <text class="aerial-label--route" x="500" y="140">TRAJETO ≤ 2KM</text>
+
+            <!-- quebra queixo (início) -->
+            <rect class="aerial-node" x="20" y="100" width="140" height="140" rx="8"/>
+            <use href="#icon-tent" x="70" y="112" width="40" height="40" class="aerial-icon"/>
+            <text class="aerial-label" x="90" y="172">QUEBRA</text>
+            <text class="aerial-label" x="90" y="188">QUEIXO</text>
+            <text class="aerial-label--sub" x="90" y="206">Tenda + backdrop</text>
+            <text class="aerial-label--sub" x="90" y="219">+ púlpito</text>
+
+            <!-- praça (fim) -->
+            <rect class="aerial-node" x="840" y="70" width="150" height="200" rx="26"/>
+            <text class="aerial-label" x="915" y="94">PRAÇA</text>
+            <rect class="aerial-node--accent" x="865" y="140" width="100" height="60" rx="4"/>
+            <use href="#icon-mic" x="900" y="147" width="30" height="22" class="aerial-icon--accent"/>
+            <text class="aerial-label--badge" x="915" y="188">TRIO DISCURSO</text>
+            <text class="aerial-label--sub" x="915" y="250">Fala do Presidente</text>
+
+            <!-- comboio, em fila sobre a rua (1 = líder, mais próximo da praça) -->
+            <rect class="aerial-car" x="238" y="153" width="64" height="34" rx="3"/>
+            <circle class="aerial-car__badge" cx="246" cy="151" r="11"/>
+            <text class="aerial-label--badge" x="246" y="155">4</text>
+            <text class="aerial-label--sub" x="270" y="232">APOIO</text>
+            <text class="aerial-label--sub" x="270" y="245">Carro reserva</text>
+
+            <!-- ambulâncias -->
+            <circle class="aerial-ambulance" cx="190" cy="280" r="14"/>
+            <use href="#icon-cross" x="182" y="272" width="16" height="16" class="aerial-icon--ambulance"/>
+            <text class="aerial-label--tiny" x="190" y="304">Ambulância</text>
+            <text class="aerial-label--tiny" x="190" y="314">concentração</text>
+
+            <circle class="aerial-ambulance" cx="810" cy="280" r="14"/>
+            <use href="#icon-cross" x="802" y="272" width="16" height="16" class="aerial-icon--ambulance"/>
+            <text class="aerial-label--tiny" x="810" y="304">Ambulância</text>
+            <text class="aerial-label--tiny" x="810" y="314">trio final</text>
+
+            <rect class="aerial-car" x="378" y="153" width="64" height="34" rx="3"/>
+            <circle class="aerial-car__badge" cx="386" cy="151" r="11"/>
+            <text class="aerial-label--badge" x="386" y="155">3</text>
+            <text class="aerial-label--sub" x="410" y="232">GOVERNADORES</text>
+            <text class="aerial-label--sub" x="410" y="245">E SENADORES</text>
+
+            <rect class="aerial-car" x="518" y="153" width="64" height="34" rx="3"/>
+            <circle class="aerial-car__badge" cx="526" cy="151" r="11"/>
+            <text class="aerial-label--badge" x="526" y="155">2</text>
+            <text class="aerial-label--sub" x="550" y="232">PICKUP PR</text>
+
+            <rect class="aerial-car" x="658" y="153" width="64" height="34" rx="3"/>
+            <circle class="aerial-car__badge" cx="666" cy="151" r="11"/>
+            <text class="aerial-label--badge" x="666" y="155">1</text>
+            <text class="aerial-label--sub" x="690" y="232">TRIO JORNALISTAS</text>
+            <text class="aerial-label--sub" x="690" y="245">Imprensa em cima</text>
+          </svg>
+        </div>
+        <p class="section__lede" style="margin-top:10px;">Veículos do comboio trazem adesivo no teto e bandeira do Brasil adesivada no capô (ver imagens de referência em Veículos, item 2.2).</p>
       </div>
     </section>
 
@@ -325,10 +429,11 @@
         <h3 class="subsection__title"><span class="num">5.3</span> Internet</h3>
         <div class="table-wrap">
           <table class="data-table">
-            <thead><tr><th>Localização</th><th>Velocidade</th><th>Tipo</th></tr></thead>
+            <thead><tr><th>Localização</th><th>Serviço</th><th>Velocidade</th><th>Tipo</th><th>Nome da rede</th><th>Senha</th></tr></thead>
             <tbody>
-              <tr><td>Coletiva de imprensa (início do trajeto)</td><td>Mín. 50mb</td><td>Cabeado (1 ponto)</td></tr>
-              <tr><td>Trio elétrico (ponto final)</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>Todo o trajeto</td><td>Mochilink + Starlink (backup)</td><td>Mín. 200mb</td><td>Wi-Fi</td><td>LULA26_CAMINHADA</td><td>solicitar com a produção</td></tr>
+              <tr><td>Coletiva de imprensa (início do trajeto)</td><td>Wi-Fi</td><td>Mín. 50mb</td><td>Wi-Fi</td><td>LULA26_IMPRENSA</td><td>solicitar com a produção</td></tr>
+              <tr><td>Trio elétrico (ponto final)</td><td>Wi-Fi</td><td>50mb</td><td>Wi-Fi</td><td>LULA26_TRIO</td><td>solicitar com a produção</td></tr>
             </tbody>
           </table>
         </div>
@@ -359,7 +464,19 @@
   </main>
 </div>
 
+<!-- Lightbox (compartilhado por todas as galerias do documento) -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada">
+    <svg class="icon"><use href="#icon-x"/></svg>
+  </button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+</div>
+
 <script src="assets/js/main.js"></script>
+<script src="assets/js/gallery.js"></script>
 <script src="assets/js/export-pdf.js"></script>
 </body>
 </html>

@@ -197,6 +197,10 @@
   margin: 0;
 }
 
+.spec-card--media .spec-card__image--square {
+  aspect-ratio: 1 / 1;
+}
+
 .spec-card--media .spec-card__image--portrait {
   aspect-ratio: 9 / 16;
 }
@@ -717,6 +721,130 @@ table.data-table {
 
 .doc-footer strong {
   color: var(--white);
+}
+
+/* ---- Mapa esquemático de trajeto (vista aérea) ---- */
+
+.aerial-diagram-wrap {
+  overflow-x: auto;
+  margin: 18px 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #eef0ea;
+}
+
+.aerial-diagram-wrap svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+
+.aerial-block {
+  fill: #dcdfd5;
+  stroke: #c3c8b8;
+  stroke-width: 1;
+}
+
+.aerial-road {
+  fill: #8d9088;
+}
+
+.aerial-road__line {
+  stroke: #f3f2f3;
+  stroke-width: 3;
+  stroke-dasharray: 14 10;
+}
+
+.aerial-node {
+  fill: var(--white);
+  stroke: var(--color-text);
+  stroke-width: 2;
+}
+
+.aerial-node--accent {
+  fill: var(--color-accent-dark);
+  stroke: var(--color-text);
+}
+
+.aerial-car {
+  fill: var(--white);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.aerial-car__badge {
+  fill: var(--color-accent);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.aerial-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  fill: var(--color-text);
+  text-anchor: middle;
+}
+
+.aerial-label--accent {
+  fill: var(--white);
+}
+
+.aerial-label--sub {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 500;
+  fill: var(--color-text-muted);
+  text-anchor: middle;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.aerial-label--badge {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--white);
+  text-anchor: middle;
+}
+
+.aerial-label--route {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--white);
+  text-anchor: middle;
+}
+
+.aerial-icon {
+  color: var(--color-accent-dark);
+}
+
+.aerial-icon--accent {
+  color: var(--white);
+}
+
+.aerial-ambulance {
+  fill: var(--white);
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+
+.aerial-icon--ambulance {
+  color: var(--color-accent);
+}
+
+.aerial-label--tiny {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  fill: var(--color-text-muted);
+  text-anchor: middle;
 }
 
 /* ---- Hub (index.html — seletor de formatos) ---- */
