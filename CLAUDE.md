@@ -62,6 +62,13 @@ sidebar nav was chosen over paginated/slide navigation.
   `unable to write file .git/objects/.. : Permission denied` — that's Dropbox's sync client
   transiently locking the new object file, not a real permissions problem. Just retry the same
   `git add` command after a few seconds; it's not worth deep-diagnosing.
+- The three CSS files (`main.css`, `components.css`, `print.css`) are linked from `index.html`,
+  `comicio.html`, and `caminhada.html` with a `?v=YYYYMMDDx` cache-busting query string. GitHub
+  Pages/browsers cache these filenames aggressively across deploys, so a CSS-only change can go
+  live on the HTML but still render with the *old* cached CSS (symptom: SVG shapes/colors looking
+  wrong or defaulting to black, since classes silently fail to apply). **Whenever you edit any of
+  the three CSS files, bump the `?v=` value on all three `<link>` tags in all three HTML files
+  before publishing** (a new date+letter suffix is enough, e.g. `20260825c` → `20260825d`).
 
 ## Brand reference (from `fonte/identidade-visual/guia-simplificado-design.md`)
 
