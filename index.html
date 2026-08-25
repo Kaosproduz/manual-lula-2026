@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno Técnico — Campanha Lula 2026 — Comício</title>
+<meta name="description" content="Requisitos mínimos, especificações e responsabilidades para execução de comício — Campanha Lula 2026.">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+
+<!-- Sprite de ícones (inline, reutilizados via <use>) -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="icon-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+  <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="icon-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="5" r="1.75"/><path d="M9.5 8.5v3l3.5 1.5h4"/><circle cx="8" cy="17.5" r="4"/><path d="M9.5 11.5 8 17.5"/></symbol>
+  <symbol id="icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></symbol>
+  <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="icon-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+</svg>
+
+<div class="app-shell">
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <img class="sidebar__logo" src="assets/img/logo/lula26-logo-oficial.png" alt="Presidente Lula 13 · Vice Alckmin">
+      <span class="sidebar__meta">Caderno Técnico · Comício</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Navegação do documento">
+      <ul style="list-style:none; padding:0; margin:0;">
+
+        <li>
+          <a class="nav-group__link" href="#visao-geral"><svg class="icon"><use href="#icon-flag"/></svg>Visão Geral</a>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#infraestrutura"><svg class="icon"><use href="#icon-layout"/></svg>Infraestrutura Física</a>
+          <ul class="nav-sub">
+            <li><a class="nav-sub__link" href="#infra-palco">Estrutura do palco</a></li>
+            <li><a class="nav-sub__link" href="#infra-octanorm">Salas Octanorm</a></li>
+            <li><a class="nav-sub__link" href="#infra-tendas">Tendas</a></li>
+            <li><a class="nav-sub__link" href="#infra-fechamentos">Fechamentos</a></li>
+            <li><a class="nav-sub__link" href="#infra-autoportantes">Estruturas autoportantes</a></li>
+            <li><a class="nav-sub__link" href="#infra-mobiliario">Mobiliário</a></li>
+            <li><a class="nav-sub__link" href="#infra-sinalizacao">Sinalização</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#energia-tecnologia"><svg class="icon"><use href="#icon-zap"/></svg>Energia &amp; Tecnologia</a>
+          <ul class="nav-sub">
+            <li><a class="nav-sub__link" href="#energia">Energia / geradores</a></li>
+            <li><a class="nav-sub__link" href="#som">Sistema de som</a></li>
+            <li><a class="nav-sub__link" href="#iluminacao">Iluminação</a></li>
+            <li><a class="nav-sub__link" href="#led-video">Painéis LED / vídeo</a></li>
+            <li><a class="nav-sub__link" href="#internet">Internet</a></li>
+            <li><a class="nav-sub__link" href="#teleprompter">Teleprompter</a></li>
+            <li><a class="nav-sub__link" href="#comunicacao">Comunicação / rádios</a></li>
+            <li><a class="nav-sub__link" href="#insumos">Insumos</a></li>
+            <li><a class="nav-sub__link" href="#impressora">Impressora</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#imprensa-libras"><svg class="icon"><use href="#icon-mic"/></svg>Imprensa &amp; Libras</a>
+          <ul class="nav-sub">
+            <li><a class="nav-sub__link" href="#imprensa">Área de imprensa</a></li>
+            <li><a class="nav-sub__link" href="#libras">Libras</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#operacoes-servicos"><svg class="icon"><use href="#icon-shield"/></svg>Operações &amp; Serviços</a>
+          <ul class="nav-sub">
+            <li><a class="nav-sub__link" href="#servicos-operacionais">Segurança / brigada / limpeza</a></li>
+            <li><a class="nav-sub__link" href="#banheiros">Banheiros</a></li>
+            <li><a class="nav-sub__link" href="#saude-emergencia">Saúde / emergência</a></li>
+            <li><a class="nav-sub__link" href="#hidratacao">Hidratação</a></li>
+            <li><a class="nav-sub__link" href="#credenciamento-revista">Credenciamento / revista</a></li>
+            <li><a class="nav-sub__link" href="#catering">Catering</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#acessibilidade"><svg class="icon"><use href="#icon-access"/></svg>Acessibilidade (PCD)</a>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#gestao-conformidade"><svg class="icon"><use href="#icon-clipboard"/></svg>Gestão &amp; Conformidade</a>
+          <ul class="nav-sub">
+            <li><a class="nav-sub__link" href="#seguro">Seguro do evento</a></li>
+            <li><a class="nav-sub__link" href="#licencas">Licenças e laudos</a></li>
+            <li><a class="nav-sub__link" href="#fornecedores">Fornecedores</a></li>
+            <li><a class="nav-sub__link" href="#cronograma">Cronograma</a></li>
+            <li><a class="nav-sub__link" href="#checklist-entrega">Checklist de entrega</a></li>
+            <li><a class="nav-sub__link" href="#vistoria">Vistoria e aceite</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="nav-group__link" href="#consideracoes-finais"><svg class="icon"><use href="#icon-check-circle"/></svg>Considerações Finais</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="sidebar__footer">
+      <button class="btn-export" id="export-pdf" type="button">
+        <svg class="icon"><use href="#icon-download"/></svg>
+        Exportar PDF
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== CONTEÚDO ==================== -->
+  <main class="content">
+
+    <header class="hero" style="--hero-image:url('assets/img/palco-1/palco-1-drone-01.jpg');">
+      <span class="hero__eyebrow">Campanha 2026 · Formato Comício</span>
+      <h1>Caderno Técnico de Turnê</h1>
+      <p class="hero__subtitle">Requisitos mínimos, condições, especificações e responsabilidades para a execução do evento — infraestrutura, serviços, equipamentos, segurança, acessibilidade, logística e operação.</p>
+      <div class="hero__stats">
+        <div class="stat-chip"><span class="stat-chip__value">02 dias</span><span class="stat-chip__label">Montagem técnica completa</span></div>
+        <div class="stat-chip"><span class="stat-chip__value">01 dia</span><span class="stat-chip__label">Testes, alinhamentos e ensaios</span></div>
+        <div class="stat-chip"><span class="stat-chip__value">~10.000 m²</span><span class="stat-chip__label">Área de cobertura estimada</span></div>
+        <div class="stat-chip"><span class="stat-chip__value">5.000</span><span class="stat-chip__label">Público estimado</span></div>
+      </div>
+    </header>
+
+    <!-- ============ 1. VISÃO GERAL ============ -->
+    <section class="section" id="visao-geral">
+      <span class="section__eyebrow">01 — Introdução</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-flag"/></svg>Visão Geral</h2>
+      <p class="section__lede">Este caderno orienta cotações, contratações e acompanhamento de fornecedores. As especificações devem ser compartilhadas integralmente com a produção local e todas as empresas envolvidas.</p>
+
+      <div class="spec-card">
+        <div class="spec-card__title">Requisitos essenciais</div>
+        <ul>
+          <li>02 dias completos para montagem técnica</li>
+          <li>01 dia completo para testes, alinhamentos e ensaios</li>
+          <li>Todos os sistemas montados, energizados e operacionais no início dos testes</li>
+          <li>01 técnico de som, 01 de iluminação e 01 de painel LED disponíveis durante montagem, testes e operação</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 2. INFRAESTRUTURA FÍSICA ============ -->
+    <section class="section" id="infraestrutura">
+      <span class="section__eyebrow">02 — Infraestrutura Física</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-layout"/></svg>Infraestrutura Física</h2>
+      <p class="section__lede">Palco, salas de apoio, tendas, fechamentos, mobiliário e sinalização do evento.</p>
+
+      <div class="subsection" id="infra-palco">
+        <h3 class="subsection__title"><span class="num">2.1</span> Estrutura e segurança do palco</h3>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-card__value">10×8×1m</span><span class="stat-card__label">Palco (L×P×A)</span></div>
+          <div class="stat-card"><span class="stat-card__value">16×10×10m</span><span class="stat-card__label">Cobertura</span></div>
+          <div class="stat-card"><span class="stat-card__value">20×3×1m</span><span class="stat-card__label">Passarela</span></div>
+          <div class="stat-card"><span class="stat-card__value">4×4×1m</span><span class="stat-card__label">Avanço central</span></div>
+        </div>
+        <div class="spec-grid" style="margin-top:16px;">
+          <div class="spec-card">
+            <div class="spec-card__title">Especificações estruturais</div>
+            <ul>
+              <li>Estrutura metálica tubular para alturas &gt; 1,00m</li>
+              <li>Praticáveis modulares profissionais para alturas menores</li>
+              <li>Carpete novo vermelho, firme e uniforme</li>
+              <li>Escada: largura mín. 1,20m · pisos 28–32cm · espelhos 16–18cm</li>
+              <li>Rampa acessível: largura mín. 1,20m · inclinação máx. 10%</li>
+            </ul>
+            <p class="spec-card__note">Proibido easyfloor, piso plástico, vinílico ou lona.</p>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Barricadas</div>
+            <ul>
+              <li>Tipo anti-esmagamento, marca Feeling</li>
+              <li>Mínimo 02 agentes de segurança em cada acesso ao palco</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Praticáveis — 60 unidades</div>
+            <ul>
+              <li><strong>04</strong> com 100cm — apoio técnico</li>
+              <li><strong>12</strong> com 80cm — área PCD</li>
+              <li><strong>06</strong> pantográficos — câmeras</li>
+              <li><strong>16</strong> para house (8×40cm + 8×60cm)</li>
+              <li><strong>14</strong> com 80cm — house mix</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="infra-octanorm">
+        <h3 class="subsection__title"><span class="num">2.2</span> Estruturas de Octanorm</h3>
+        <p class="section__lede" style="margin-bottom:16px;">Todas as salas devem possuir ar-condicionado próprio, portas com chave e pontos elétricos internos.</p>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Sala PR</div>
+            <ul>
+              <li>Octanorm 9,50m × 9,50m + tenda 10×10m obrigatória</li>
+              <li>Fechamento em lona lateral (sem portas)</li>
+              <li>Banheiro VIP interno (1 masc. + 1 fem.)</li>
+              <li>Hidráulica e dejetos autoportantes</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Produção/técnica + camarins</div>
+            <ul>
+              <li>Piso elevado 20cm, encarpetado, ar-condicionado</li>
+              <li>4 ambientes de 4,25×5,30m: Produção/Técnica, Produção partido local, Produção/Transmissão presidência, Sala palco (a confirmar)</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Apoio de serviços</div>
+            <ul>
+              <li>4,25m × 5,30m, com chave</li>
+              <li>Base operacional para equipes de serviço</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Posto médico</div>
+            <ul>
+              <li>Octanorm mínimo 4×5m, conforme Corpo de Bombeiros</li>
+              <li>Acesso livre para ambulância</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Credenciamento</div>
+            <ul>
+              <li>3 entradas distintas, tendas 5×5m a 10×10m</li>
+              <li>3 balcões octanorm com testeira (balcão 5–10m × 0,5m × 1m)</li>
+              <li>Entradas: público geral, staff/imprensa, autoridades/área alfa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="infra-tendas">
+        <h3 class="subsection__title"><span class="num">2.3</span> Tendas</h3>
+        <ul class="chip-list">
+          <li>10×10m — Sala PR</li>
+          <li>10×10m — Apoio produção/técnica</li>
+          <li>5×5m — Apoio de serviços</li>
+          <li>5×5m — Posto médico</li>
+          <li>3× 5×5m — Credenciamento</li>
+          <li>5× 3×3m — Hidratação</li>
+          <li>5×5m c/ extensor — Desembarque presidente</li>
+        </ul>
+        <p class="section__lede" style="margin:10px 0 0;">Tendas adicionais podem ser solicitadas em adversidades climáticas.</p>
+      </div>
+
+      <div class="subsection" id="infra-fechamentos">
+        <h3 class="subsection__title"><span class="num">2.4</span> Fechamentos</h3>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-card__value">250m</span><span class="stat-card__label">Fechamentos metálicos</span></div>
+          <div class="stat-card"><span class="stat-card__value">200m</span><span class="stat-card__label">Barricadas</span></div>
+          <div class="stat-card"><span class="stat-card__value">600 un.</span><span class="stat-card__label">Gradis baixo</span></div>
+          <div class="stat-card"><span class="stat-card__value">150 un.</span><span class="stat-card__label">Unifilas</span></div>
+        </div>
+        <p class="section__lede" style="margin:10px 0 0;">Quantidades variáveis conforme local do evento.</p>
+      </div>
+
+      <div class="subsection" id="infra-autoportantes">
+        <h3 class="subsection__title"><span class="num">2.5</span> Estruturas autoportantes</h3>
+        <div class="spec-card">
+          <ul>
+            <li>Q30 backdrop área alfa — banner 9m (C) × 2,50m (A)</li>
+            <li>Q30 backdrop público geral — banner 10m (C) × 2,5m (A)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection" id="infra-mobiliario">
+        <h3 class="subsection__title"><span class="num">2.6</span> Mobiliário</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Palco</div>
+            <ul>
+              <li>02 púlpitos acrílico</li>
+              <li>02 mesas bistrô altas</li>
+              <li>12 poltronas giratórias beges</li>
+              <li>03 ombrelones articulados (se sem cobertura)</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Sala PR</div>
+            <ul>
+              <li>02 pranchões com tecido · 02 mesas redondas 4 cadeiras</li>
+              <li>02 sofás 2 lugares · 01 mesa de centro · 10 poltronas</li>
+              <li>01 arara · 01 espelho · 01 tapete</li>
+              <li>Paisagismo (vasos de plantas)</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Produção/técnica &amp; Stuckert</div>
+            <ul>
+              <li>04 pranchões com tecido · 20 cadeiras plástico</li>
+              <li>01 pranchão catering</li>
+              <li>Stuckert (backstage): 10 cadeiras + 02 pranchões</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">House mix / câmeras</div>
+            <ul>
+              <li>House mix: 24 cadeiras pretas estofadas + 02 pranchões</li>
+              <li>Câmeras/transmissão: 12 cadeiras pretas estofadas + 02 pranchões</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Revista &amp; geral</div>
+            <ul>
+              <li>Revista: 45 mesas · 15 cadeiras · 45 lixeiras grandes</li>
+              <li>Geral: 20 mesas · 30 cadeiras · 65 lixeiras grandes · 10 médias</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">FOH — área pública</div>
+            <ul>
+              <li>20 barracas 140×60×200cm (exposição movimentos sociais)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="infra-sinalizacao">
+        <h3 class="subsection__title"><span class="num">2.7</span> Sinalizações e lonas</h3>
+        <div class="callout">
+          <svg class="icon"><use href="#icon-alert-triangle"/></svg>
+          <span>Saídas de emergência: faixas verdes com letras brancas, conforme padrão Corpo de Bombeiros, sempre visíveis e desobstruídas.</span>
+        </div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table class="data-table">
+            <thead><tr><th>Local</th><th>Qtd.</th><th>Tamanho</th><th>Material</th></tr></thead>
+            <tbody>
+              <tr><td>Posto médico</td><td>02</td><td>3m × 1m</td><td>PS com fita adesiva</td></tr>
+              <tr><td>Hidratação</td><td>05</td><td>2,95m × 65cm</td><td>Banner com ilhós</td></tr>
+              <tr><td>Entrada área alfa</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, boxtruss</td></tr>
+              <tr><td>Entrada público</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
+              <tr><td>Imprensa/staff</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
+              <tr><td>Banheiro masc./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
+              <tr><td>Banheiro fem./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
+              <tr><td>Área PCD</td><td>01</td><td>3,90m × 1m</td><td>Banner com ilhós, guarda-corpo</td></tr>
+              <tr><td>Backdrop área alfa</td><td>01</td><td>9,30m × 2,80m</td><td>Banner com ilhós Q30</td></tr>
+              <tr><td>Backdrop público</td><td>01</td><td>10,30m × 2,80m</td><td>Banner com ilhós Q30</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. ENERGIA & TECNOLOGIA ============ -->
+    <section class="section" id="energia-tecnologia">
+      <span class="section__eyebrow">03 — Energia &amp; Tecnologia</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-zap"/></svg>Energia &amp; Tecnologia</h2>
+      <p class="section__lede">Geração de energia, som, iluminação, painéis de LED, conectividade e demais sistemas técnicos.</p>
+
+      <div class="subsection" id="energia">
+        <h3 class="subsection__title"><span class="num">3.1</span> Energia</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Divisão de geradores</div>
+            <ul>
+              <li>Som e LED: <strong>350KVA</strong> + paralelo</li>
+              <li>Iluminação: <strong>250KVA</strong> + paralelo</li>
+              <li>Serviço e alimentação: <strong>250KVA</strong> + backup</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Especificações</div>
+            <ul>
+              <li>Capacidade nominal ≥ 30% acima da demanda máxima</li>
+              <li>Operação contínua máxima de 80% da capacidade</li>
+              <li>Isolamento em área protegida, ventilação adequada</li>
+              <li>Escapamento fora de público, palco e camarins</li>
+              <li>Combustível preferencial: biodiesel</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Consumo estimado</div>
+            <ul>
+              <li>Dia 1 de montagem: 12h</li>
+              <li>Dia 2 de montagem: 12h</li>
+              <li>Dia de ensaio: 24h</li>
+              <li>Dia de evento: 24h (ou +3h após o término)</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Distribuição elétrica</div>
+            <ul>
+              <li>Aterramento conforme ABNT NBR 5410</li>
+              <li>04–08 réguas por sala de trabalho</li>
+              <li>20–30 réguas na área de imprensa</li>
+              <li>200 passa-cabos de 1,00m</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="som">
+        <h3 class="subsection__title"><span class="num">3.2</span> Sistema de som</h3>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-card__value">~10.000 m²</span><span class="stat-card__label">Área de cobertura</span></div>
+          <div class="stat-card"><span class="stat-card__value">5.000</span><span class="stat-card__label">Público estimado</span></div>
+          <div class="stat-card"><span class="stat-card__value">80 dBA</span><span class="stat-card__label">Nível mínimo operacional</span></div>
+        </div>
+        <div class="spec-grid" style="margin-top:16px;">
+          <div class="spec-card">
+            <div class="spec-card__title">PA + Front Fill + Delays</div>
+            <ul>
+              <li>Referências: d&amp;b T10, L-Acoustics KIVA II, Meyer Sound LINA</li>
+              <li>Front fills: Meyer UP-4slim, L-Acoustics 5XT, d&amp;b 5S</li>
+              <li>Alcance maior: L-Acoustics X8 / Meyer ULTRA-X20</li>
+              <li>12–18 unidades em zonas independentes</li>
+              <li>Subwoofers preferencialmente no piso</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Console de PA</div>
+            <ul>
+              <li>Digital, padrão touring — mín. 48 canais / 24 buses</li>
+              <li>Referências: Yamaha DM7/Rivage, DiGiCo Quantum 225/338, Avid S6L</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Monitor + Side Fill</div>
+            <ul>
+              <li>06–08 monitores de piso para o orador principal</li>
+              <li>08–12 na passarela · 06 na plataforma avançada</li>
+              <li>House control atrás do palco, com 04 monitores de referência</li>
+              <li>Tablet para comando remoto do console</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Sistema sem fio e RF</div>
+            <ul>
+              <li>08 microfones sem fio: Shure Axient AD2/ADX2 ou Sennheiser Digital 6000</li>
+              <li>02 sistemas in-ear completos + 2 bodypacks mínimo</li>
+              <li>Antenas direcionais/omnidirecionais (não atrás de LED)</li>
+              <li>Responsável de RF obrigatoriamente presente</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Cabeamento e acessórios</div>
+            <ul>
+              <li>01 stagebox/multi pino 12 canais</li>
+              <li>02 microfones Gooseneck por púlpito</li>
+              <li>Isolador de áudio 2 canais (EAM)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="iluminacao">
+        <h3 class="subsection__title"><span class="num">3.3</span> Iluminação</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Equipamentos</div>
+            <ul>
+              <li>80 ribalta Super Dotline (ou equiv.)</li>
+              <li>20 moving Rivale Profile</li>
+              <li>16 Ribalta Stormy 3000w</li>
+              <li>12 Domino LT (longa distância)</li>
+              <li>Console padrão GrandMA2 ou ETC Eos</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Rigging (FOH)</div>
+            <ul>
+              <li>Q30 "gol" 12×7m — iluminação frente avanço</li>
+              <li>2× Q30 torre — frente passarela/palco</li>
+              <li>2× Q30 torre — LED lateral</li>
+              <li>ART/RRT obrigatórios para todas as estruturas</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Energia, sinal e operação</div>
+            <ul>
+              <li>Nodes, splitters e buffers DMX</li>
+              <li>Testes completos de energia, sinal, movimento e foco</li>
+              <li>Programação de cenas, blackouts e transições</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Efeitos</div>
+            <ul>
+              <li>04 máquinas Stadium Blaster, 5kg papel picado colorido cada</li>
+              <li>Disparo remoto na house mix, alcance até 100m</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="led-video">
+        <h3 class="subsection__title"><span class="num">3.4</span> Painéis LED / vídeo</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Configuração — 07 painéis</div>
+            <ul>
+              <li>Fundo de palco: 14m (L) × 8m (A)</li>
+              <li>4× laterais: 4,5×8m (formam 2 telas em V)</li>
+              <li>2× delay: 4,5×8m (quando aplicável)</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Especificações técnicas</div>
+            <ul>
+              <li>Módulos outdoor, pitch máx. P3</li>
+              <li>Processamento pixel a pixel real (1:1)</li>
+              <li>Sistemas de backup</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Servidores</div>
+            <ul>
+              <li>Desktop Windows 11 (notebook proibido)</li>
+              <li>Intel i9/i7 (12ª–14ª geração) · RAM 32–64GB</li>
+              <li>NVIDIA RTX série 40/50 · SSD NVMe 1TB livre</li>
+              <li>Resolume Arena 7 + Stage Flow</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Processamento de vídeo</div>
+            <ul>
+              <li>Barco E2/E3, NovaStar H2/H9 ou PixelHue, com backup</li>
+              <li>Mín. 6 inputs e 6 outputs em 4K</li>
+              <li>04 conversores HDMI ↔ SDI 3G bidirecionais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="internet">
+        <h3 class="subsection__title"><span class="num">3.5</span> Internet</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Serviço</th><th>Velocidade</th><th>Tipo</th></tr></thead>
+            <tbody>
+              <tr><td>Transmissão</td><td>200mb full duplex</td><td>Cabeado + 2 fibras (redundância)</td></tr>
+              <tr><td>Imprensa</td><td>60mb full duplex</td><td>Wi-Fi</td></tr>
+              <tr><td>Produção/técnica</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>Credenciamento 1 (público)</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>Credenciamento 2 (staff/imprensa)</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>Credenciamento 3 (autoridades)</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>House mix</td><td>60mb</td><td>Cabeado + Wi-Fi</td></tr>
+              <tr><td>Sala PR</td><td>50mb</td><td>Wi-Fi</td></tr>
+              <tr><td>Área Stuckert</td><td>60mb</td><td>Cabeado + Wi-Fi</td></tr>
+              <tr><td>Passarela do palco</td><td>100mb</td><td>Wi-Fi</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <svg class="icon"><use href="#icon-alert-triangle"/></svg>
+          <span>Redes de backstage (Stuckert, Sala PR, Produção/técnica) ficam disponíveis até 2 horas após o término do evento.</span>
+        </div>
+      </div>
+
+      <div class="subsection" id="teleprompter">
+        <h3 class="subsection__title"><span class="num">3.6</span> Teleprompter</h3>
+        <div class="spec-card">
+          <ul>
+            <li>02 teleprompters presidenciais tipo cristal, preferencial vidro fumê</li>
+            <li>Haste metálica, monitor na base, computador dedicado</li>
+            <li>Operador presente durante testes e evento</li>
+            <li>Todos acessórios inclusos: suportes, interfaces, alimentação, extensões, backup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection" id="comunicacao">
+        <h3 class="subsection__title"><span class="num">3.7</span> Comunicação</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Rádios HT</div>
+            <ul>
+              <li>20 rádios na montagem</li>
+              <li>60 rádios durante o evento</li>
+              <li>Operador responsável todos os dias</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">ClearCom</div>
+            <ul>
+              <li>Sistema FreeSpeak — 16 belts e 3 antenas</li>
+              <li>Técnico operador em ensaio e evento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="insumos">
+        <h3 class="subsection__title"><span class="num">3.8</span> Insumos</h3>
+        <ul class="chip-list">
+          <li>06 fita gaffer preta 48mm</li>
+          <li>04 fita gaffer colorida</li>
+          <li>02 fita dupla-face</li>
+          <li>06 fita crepe larga</li>
+          <li>02 fita antiderrapante</li>
+          <li>04 marcadores permanentes</li>
+          <li>100 abraçadeiras ~200mm</li>
+          <li>100 abraçadeiras 300–400mm</li>
+          <li>02 cordão nylon ~100m</li>
+          <li>01 resma A4</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="impressora">
+        <h3 class="subsection__title"><span class="num">3.9</span> Impressora</h3>
+        <div class="spec-card">
+          <ul>
+            <li>02 impressoras toner coloridas</li>
+            <li>Acompanhamento técnico durante montagem e evento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. IMPRENSA & LIBRAS ============ -->
+    <section class="section" id="imprensa-libras">
+      <span class="section__eyebrow">04 — Imprensa &amp; Libras</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-mic"/></svg>Imprensa &amp; Libras</h2>
+
+      <div class="subsection" id="imprensa">
+        <h3 class="subsection__title"><span class="num">4.1</span> Área de imprensa</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Estrutura praticável — 6×4m, 3 níveis</div>
+            <ul>
+              <li>1º nível: 0,80m altura × 1m profundidade</li>
+              <li>2º nível: 1,10m altura × 1m profundidade</li>
+              <li>3º nível: 1,40m altura × 2m profundidade</li>
+              <li>Escada de acesso, guarda-corpos em todos os lados</li>
+              <li>60 cadeiras para jornalistas</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">"Quebra queixo" (quando aplicável)</div>
+            <ul>
+              <li>Tenda 8×8m · Backdrop 3×3m com boxtruss</li>
+              <li>Pedestal e microfone do presidente</li>
+              <li>02 microfones sem fio para jornalistas</li>
+              <li>02 caixas retorno (PR e imprensa) · 20 unifilas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="libras">
+        <h3 class="subsection__title"><span class="num">4.2</span> Libras</h3>
+        <div class="spec-card">
+          <ul>
+            <li>03 intérpretes de Libras contratados</li>
+            <li>Tradução simultânea para público local e remoto</li>
+          </ul>
+          <p class="redacted-note" style="margin-top:10px;">Contato de contratação disponível apenas na fonte original (dado pessoal removido deste documento).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. OPERAÇÕES & SERVIÇOS ============ -->
+    <section class="section" id="operacoes-servicos">
+      <span class="section__eyebrow">05 — Operações &amp; Serviços</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-shield"/></svg>Operações &amp; Serviços</h2>
+      <p class="section__lede">Dimensionado para público de referência de 10.000 pessoas.</p>
+
+      <div class="subsection" id="servicos-operacionais">
+        <h3 class="subsection__title"><span class="num">5.1</span> Segurança, brigada e limpeza</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Segurança patrimonial</div>
+            <ul>
+              <li>06 — montagem</li>
+              <li>20 — evento</li>
+              <li>06 — desmontagem</li>
+            </ul>
+            <p class="spec-card__note">Quantitativos revisáveis conforme capacidade final e órgãos competentes.</p>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Brigadistas</div>
+            <ul>
+              <li>02 — montagem · 35 — evento · 02 — desmontagem</li>
+              <li>Equip. mínimo: 02 cadeiras de rodas, 02 macas rígidas, 02 colares cervicais</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Limpeza</div>
+            <ul>
+              <li>04 — montagem · 40 — evento · 10 — desmontagem</li>
+              <li>Desinfetante sem lavanda</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Recepção e apoio</div>
+            <ul>
+              <li>Mín. 30 recepcionistas</li>
+              <li>20 assistentes de fluxo + 20 de credenciamento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="banheiros">
+        <h3 class="subsection__title"><span class="num">5.2</span> Banheiros</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Presidencial (Sala PR)</div>
+            <ul>
+              <li>01 banheiro VIP luxo (1 masc. + 1 fem.)</li>
+              <li>Papel, sabonete líquido, álcool em gel</li>
+            </ul>
+            <p class="spec-card__note">Proibido desinfetante ou lavanda.</p>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Área Alfa — 20 unidades luxo</div>
+            <ul>
+              <li>08 masc. + 08 fem.</li>
+              <li>02 PNE masc. + 02 PNE fem.</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Área pública</div>
+            <ul>
+              <li>Referência: 01 banheiro por 150 pessoas</li>
+              <li>Conforme público, duração, proporção e exigências legais</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="chip-list" style="margin-top:12px;">
+          <li>Químico standard</li><li>PCD/PNE</li><li>Luxo</li><li>Super luxo</li><li>Pré-moldado/container</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="saude-emergencia">
+        <h3 class="subsection__title"><span class="num">5.3</span> Atendimento médico e emergência</h3>
+        <div class="spec-grid">
+          <div class="spec-card"><div class="spec-card__title">Ambulância básica</div><ul><li>01 unidade com equipe — montagem e desmontagem</li></ul></div>
+          <div class="spec-card"><div class="spec-card__title">Ambulância UTI</div><ul><li>01 unidade com equipe — durante o evento</li></ul></div>
+          <div class="spec-card"><div class="spec-card__title">Posto médico</div><ul><li>Mín. 01, conforme público e exigências legais</li></ul></div>
+        </div>
+      </div>
+
+      <div class="subsection" id="hidratacao">
+        <h3 class="subsection__title"><span class="num">5.4</span> Hidratação</h3>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-card__value">05 pontos</span><span class="stat-card__label">Tenda 3×3m cada</span></div>
+          <div class="stat-card"><span class="stat-card__value">500ml</span><span class="stat-card__label">Referência por pessoa</span></div>
+        </div>
+      </div>
+
+      <div class="subsection" id="credenciamento-revista">
+        <h3 class="subsection__title"><span class="num">5.5</span> Credenciamento e revista</h3>
+        <div class="spec-grid">
+          <div class="spec-card"><div class="spec-card__title">Credenciamento</div><ul><li>01 raquete por 300 pessoas/hora, por fila</li></ul></div>
+          <div class="spec-card"><div class="spec-card__title">Revista — área alfa</div><ul><li>05 pórticos de detecção de metais</li></ul></div>
+        </div>
+      </div>
+
+      <div class="subsection" id="catering">
+        <h3 class="subsection__title"><span class="num">5.6</span> Catering</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Presidencial</div>
+            <ul>
+              <li>Café Nespresso · água com/sem gás lacrada</li>
+              <li>Frutas secas, castanhas, sanduíches naturais, bolos</li>
+              <li>Fornecedores validados por protocolo de segurança presidencial</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Apoio produção/técnica</div>
+            <ul>
+              <li>Café com reposição constante · água gelada</li>
+              <li>Biscoitos, bolo, sanduíche de metro, refrigerante</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. ACESSIBILIDADE (PCD) ============ -->
+    <section class="section" id="acessibilidade">
+      <span class="section__eyebrow">06 — Acessibilidade</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-access"/></svg>Acessibilidade (PCD)</h2>
+      <p class="section__lede">Conformidade com o Decreto nº 9.404/2018 e a Instrução Normativa SECOM nº 3/2023.</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="spec-card__title">Área reservada (grande público)</div>
+          <ul>
+            <li>Plataforma elevada com rampa acessível</li>
+            <li>Guarda-corpo lateral, posicionamento privilegiado</li>
+            <li>Próxima à primeira fileira, com sinalização adequada</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <div class="spec-card__title">Eventos menores</div>
+          <ul>
+            <li>Abertura ~4×3m, 3–4 fileiras</li>
+            <li>Próximo à área alfa, frontal ao palco</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <div class="spec-card__title">Banheiros PCD</div>
+          <ul>
+            <li>Acesso facilitado à área reservada</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. GESTÃO & CONFORMIDADE ============ -->
+    <section class="section" id="gestao-conformidade">
+      <span class="section__eyebrow">07 — Gestão &amp; Conformidade</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-clipboard"/></svg>Gestão &amp; Conformidade</h2>
+
+      <div class="subsection" id="seguro">
+        <h3 class="subsection__title"><span class="num">7.1</span> Seguro do evento</h3>
+        <div class="spec-card"><ul><li>Seguro estrutural do evento obrigatório, incluindo o público estimado</li></ul></div>
+      </div>
+
+      <div class="subsection" id="licencas">
+        <h3 class="subsection__title"><span class="num">7.2</span> Licenças e laudos</h3>
+        <ul class="chip-list">
+          <li>ARTs/RRTs</li><li>Laudo Corpo de Bombeiros</li><li>Documentos de segurança</li>
+          <li>Capacidade de carga das estruturas</li><li>Laudos de estruturas</li><li>Documentação elétrica</li>
+          <li>Autorizações de órgãos competentes</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="fornecedores">
+        <h3 class="subsection__title"><span class="num">7.3</span> Fornecedores</h3>
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__title">Lista obrigatória</div>
+            <ul>
+              <li>Nome da empresa e serviço contratado</li>
+              <li>Responsável e contato operacional/emergência</li>
+              <li>Horário de atuação e local de atendimento</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__title">Avaliação especial</div>
+            <ul>
+              <li>Catering · Água · Alimentação · Estrutura presidencial</li>
+            </ul>
+            <p class="spec-card__note">Lista completa encaminhada à produtora nacional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="cronograma">
+        <h3 class="subsection__title"><span class="num">7.4</span> Cronograma de montagem e desmontagem</h3>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__phase">Pré-produção</div>
+            <ul>
+              <li>Visita técnica e levantamento do espaço</li>
+              <li>Projeto de implantação e aprovação de estruturas</li>
+              <li>Licenças, ARTs/RRTs, contratação de fornecedores</li>
+              <li>Validações: segurança, GSI, cerimonial, SIMP, credenciamento, acessibilidade</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__phase">Montagem</div>
+            <ul>
+              <li>Implantação de estruturas e instalação elétrica</li>
+              <li>Tendas, praticáveis, salas, backdrops, pórticos</li>
+              <li>Mobiliário, equipamentos técnicos, banheiros, segurança</li>
+              <li>Testes de internet, comunicação e vistoria</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__phase">Operação</div>
+            <ul>
+              <li>Checagem geral e liberação de áreas</li>
+              <li>Credenciamento, recepção, palco</li>
+              <li>Operação técnica, segurança, atendimento médico, imprensa, cerimonial</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__phase">Desmontagem</div>
+            <ul>
+              <li>Desmobilização técnica e retirada de estruturas</li>
+              <li>Limpeza final e coleta de resíduos</li>
+              <li>Vistoria e liberação do espaço</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="checklist-entrega">
+        <h3 class="subsection__title"><span class="num">7.5</span> Checklist de entrega — fornecedores</h3>
+        <ul class="chip-list">
+          <li>Contrato/ordem de serviço</li><li>Dados cadastrais</li><li>Responsável técnico</li>
+          <li>ART/RRT</li><li>Laudos/certificados</li><li>Seguro (quando aplicável)</li>
+          <li>Lista de equipe</li><li>Lista de veículos/equipamentos</li><li>Horários de montagem/desmontagem</li>
+          <li>Contatos operacionais/emergência</li><li>Plano de contingência</li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="vistoria">
+        <h3 class="subsection__title"><span class="num">7.6</span> Vistoria e aceite</h3>
+        <ol class="checklist">
+          <li class="checklist__item"><span class="checklist__index">1</span><span class="checklist__text">Conferência dimensional</span></li>
+          <li class="checklist__item"><span class="checklist__index">2</span><span class="checklist__text">Verificação de estabilidade</span></li>
+          <li class="checklist__item"><span class="checklist__index">3</span><span class="checklist__text">Verificação de acabamento</span></li>
+          <li class="checklist__item"><span class="checklist__index">4</span><span class="checklist__text">Verificação de segurança</span></li>
+          <li class="checklist__item"><span class="checklist__index">5</span><span class="checklist__text">Conferência de equipamentos</span></li>
+          <li class="checklist__item"><span class="checklist__index">6</span><span class="checklist__text">Teste de energia</span></li>
+          <li class="checklist__item"><span class="checklist__index">7</span><span class="checklist__text">Teste de internet</span></li>
+          <li class="checklist__item"><span class="checklist__index">8</span><span class="checklist__text">Teste de comunicação</span></li>
+          <li class="checklist__item"><span class="checklist__index">9</span><span class="checklist__text">Conferência de sinalização</span></li>
+          <li class="checklist__item"><span class="checklist__index">10</span><span class="checklist__text">Validação da produção responsável</span></li>
+        </ol>
+        <div class="callout callout--danger">
+          <svg class="icon"><use href="#icon-x-circle"/></svg>
+          <span>Divergências devem ser corrigidas pelo fornecedor antes da abertura da área.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. CONSIDERAÇÕES FINAIS ============ -->
+    <section class="section" id="consideracoes-finais">
+      <span class="section__eyebrow">08 — Encerramento</span>
+      <h2 class="section__title"><svg class="icon"><use href="#icon-check-circle"/></svg>Considerações Finais</h2>
+      <p class="section__lede">Este caderno técnico estabelece requisitos mínimos de referência e deve ser utilizado em conjunto com projetos executivos, plantas, mapas de fluxo, cronogramas, protocolos de segurança e orientações dos órgãos competentes.</p>
+
+      <div class="spec-card">
+        <div class="spec-card__title">Todos os quantitativos devem ser revalidados considerando</div>
+        <ul>
+          <li>Capacidade final de público e layout aprovado</li>
+          <li>Local definitivo e duração do evento</li>
+          <li>Necessidades do presidente e comitiva</li>
+          <li>Orientações do GSI, cerimonial e secretaria de imprensa</li>
+          <li>Exigências do Corpo de Bombeiros e legislação municipal/estadual</li>
+          <li>Normas de acessibilidade, transmissões, fluxos e condições climáticas</li>
+        </ul>
+        <p class="spec-card__note">Alterações devem ser previamente validadas por produção executiva e direção técnica.</p>
+      </div>
+
+      <p class="redacted-note" style="margin-top:20px;">Contatos técnicos da equipe disponíveis apenas na fonte original — removidos deste documento por conterem dados pessoais.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <p><strong>Caderno Técnico de Turnê — Campanha Lula 2026.</strong> Documento esquemático de referência, gerado a partir do material fonte da produção. Use o botão "Exportar PDF" na barra lateral para gerar uma versão impressa fiel a este layout.</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/export-pdf.js"></script>
+</body>
+</html>
