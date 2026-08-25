@@ -773,6 +773,12 @@ table.data-table {
   stroke-width: 1.5;
 }
 
+.aerial-car--accent {
+  fill: var(--color-accent-dark);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
 .aerial-car__badge {
   fill: var(--color-accent);
   stroke: var(--color-text);
@@ -787,6 +793,11 @@ table.data-table {
   text-transform: uppercase;
   fill: var(--color-text);
   text-anchor: middle;
+}
+
+.aerial-label--big {
+  font-size: 17px;
+  fill: var(--color-accent-dark);
 }
 
 .aerial-label--accent {
@@ -813,10 +824,15 @@ table.data-table {
 
 .aerial-label--route {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  fill: var(--white);
+  fill: var(--color-accent-dark);
   text-anchor: middle;
+}
+
+.aerial-route-line {
+  stroke: var(--color-accent);
+  stroke-width: 2;
 }
 
 .aerial-icon {
@@ -834,6 +850,10 @@ table.data-table {
 }
 
 .aerial-icon--ambulance {
+  color: var(--color-accent);
+}
+
+.aerial-icon--star {
   color: var(--color-accent);
 }
 
