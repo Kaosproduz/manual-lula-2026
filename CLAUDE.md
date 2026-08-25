@@ -58,6 +58,10 @@ sidebar nav was chosen over paginated/slide navigation.
   string fails to close, breaking command parsing.
 - Git identity is configured locally in this repo (not global) — see `git config user.name` /
   `user.email` if you need to check it; already set, no need to redo.
+- This repo lives inside a Dropbox-synced folder. Occasionally `git add`/`commit` fails with
+  `unable to write file .git/objects/.. : Permission denied` — that's Dropbox's sync client
+  transiently locking the new object file, not a real permissions problem. Just retry the same
+  `git add` command after a few seconds; it's not worth deep-diagnosing.
 
 ## Brand reference (from `fonte/identidade-visual/guia-simplificado-design.md`)
 
