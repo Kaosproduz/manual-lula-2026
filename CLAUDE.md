@@ -56,8 +56,8 @@ sidebar nav was chosen over paginated/slide navigation.
 - Bash tool paths: use forward slashes and avoid a trailing backslash immediately before a
   closing double-quote (e.g. `"...\folder\"`) — Git Bash reads `\"` as an escaped quote and the
   string fails to close, breaking command parsing.
-- Git identity is configured locally in this repo (not global): `Caio Fazolin` /
-  `fazolin@gmail.com`.
+- Git identity is configured locally in this repo (not global) — see `git config user.name` /
+  `user.email` if you need to check it; already set, no need to redo.
 
 ## Brand reference (from `fonte/identidade-visual/guia-simplificado-design.md`)
 
