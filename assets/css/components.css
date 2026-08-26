@@ -887,13 +887,20 @@ table.data-table {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: #eef0ea;
-  max-width: 440px;
+  max-width: 640px;
 }
 
 .stage-plan-wrap svg {
   display: block;
   width: 100%;
+  min-width: 480px;
   height: auto;
+}
+
+.stage-plan-block {
+  fill: var(--color-accent);
+  stroke: var(--color-accent-dark);
+  stroke-width: 1.5;
 }
 
 .stage-plan-leader {
@@ -909,7 +916,7 @@ table.data-table {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   fill: var(--color-text);
-  text-anchor: start;
+  text-anchor: middle;
 }
 
 .stage-plan-label--accent {
@@ -921,17 +928,17 @@ table.data-table {
   font-size: 11px;
   font-weight: 500;
   fill: var(--color-text-muted);
-  text-anchor: start;
+  text-anchor: middle;
 }
 
 .stage-plan-crowd {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   fill: var(--color-text-muted);
-  text-anchor: middle;
+  text-anchor: start;
 }
 
 /* ---- Hub (index.html — seletor de formatos) ---- */
