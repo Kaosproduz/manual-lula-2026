@@ -969,6 +969,19 @@ table.data-table {
   color: var(--color-accent-dark);
 }
 
+.format-card__badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  padding: 3px 8px;
+  background: var(--yellow);
+  color: var(--color-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+}
+
 .format-card__desc {
   font-size: 13.5px;
   color: var(--color-text-muted);
