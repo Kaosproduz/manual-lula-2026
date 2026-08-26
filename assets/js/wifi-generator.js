@@ -1,6 +1,7 @@
-// wifi-generator.js — gera senhas novas (e o QR code correspondente) para as redes
-// Wi-Fi do comício e da caminhada. Nomes de rede são fixos; senha e QR mudam a cada
-// geração e não ficam salvos em lugar nenhum — tudo roda no navegador de quem abrir a página.
+// wifi-generator.js — deriva senha e QR code para cada rede Wi-Fi (comício e caminhada)
+// a partir de um "seed" digitado. Mesmo seed + mesma rede = sempre a mesma senha, em
+// qualquer navegador/dispositivo. O seed fica salvo no localStorage deste navegador,
+// então recarregar a página mantém tudo igual. Nada é enviado pra servidor nenhum.
 
 (function () {
 
@@ -20,13 +21,34 @@
 
   var ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
   var PASS_LENGTH = 12;
+  var SEED_STORAGE_KEY = 'lula26-wifi-seed';
+  var DEFAULT_SEED = 'lula26-2026';
 
-  function generatePassword() {
-    var bytes = new Uint32Array(PASS_LENGTH);
-    crypto.getRandomValues(bytes);
+  // FNV-1a — string -> inteiro 32 bits, determinístico.
+  function hashString(str) {
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  // mulberry32 — PRNG determinístico a partir de uma seed numérica.
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function passwordFromSeed(seed, ssid) {
+    var rng = mulberry32(hashString(seed + '::' + ssid));
     var out = '';
     for (var i = 0; i < PASS_LENGTH; i++) {
-      out += ALPHABET[bytes[i] % ALPHABET.length];
+      out += ALPHABET[Math.floor(rng() * ALPHABET.length)];
     }
     return out;
   }
@@ -78,7 +100,6 @@
         '<div class="wifi-card__pass-row">' +
           '<span class="wifi-card__pass js-pass"></span>' +
           '<button class="wifi-btn wifi-btn--ghost js-copy" type="button">Copiar</button>' +
-          '<button class="wifi-btn wifi-btn--ghost js-regen" type="button" title="Gerar nova senha para esta rede">↻</button>' +
         '</div>' +
       '</div>' +
       '<div class="wifi-card__qr js-qr"></div>';
@@ -86,13 +107,12 @@
     var passEl = card.querySelector('.js-pass');
     var qrEl = card.querySelector('.js-qr');
     var copyBtn = card.querySelector('.js-copy');
-    var regenBtn = card.querySelector('.js-regen');
 
-    function regenerate() {
-      var pass = generatePassword();
+    card._update = function (seed) {
+      var pass = passwordFromSeed(seed, network.ssid);
       passEl.textContent = pass;
       renderQr(qrEl, wifiPayload(network.ssid, pass));
-    }
+    };
 
     copyBtn.addEventListener('click', function () {
       var pass = passEl.textContent;
@@ -111,9 +131,6 @@
       }
     });
 
-    regenBtn.addEventListener('click', regenerate);
-
-    regenerate();
     return card;
   }
 
@@ -142,8 +159,20 @@
     });
   }
 
-  function regenerateAll() {
-    document.querySelectorAll('#wifi-events .js-regen').forEach(function (btn) { btn.click(); });
+  function applySeed(seed) {
+    document.querySelectorAll('#wifi-events .wifi-card').forEach(function (card) {
+      card._update(seed);
+    });
+    try { localStorage.setItem(SEED_STORAGE_KEY, seed); } catch (e) {}
+  }
+
+  function loadStoredSeed() {
+    try {
+      var s = localStorage.getItem(SEED_STORAGE_KEY);
+      return s || DEFAULT_SEED;
+    } catch (e) {
+      return DEFAULT_SEED;
+    }
   }
 
   function printScope(slug) {
@@ -155,8 +184,18 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     render();
-    var genAllBtn = document.getElementById('wifi-generate-all');
-    if (genAllBtn) genAllBtn.addEventListener('click', regenerateAll);
+
+    var seedInput = document.getElementById('wifi-seed');
+    var seed = loadStoredSeed();
+    if (seedInput) {
+      seedInput.value = seed;
+      applySeed(seed);
+      seedInput.addEventListener('input', function () {
+        applySeed(seedInput.value || DEFAULT_SEED);
+      });
+    } else {
+      applySeed(seed);
+    }
 
     document.querySelectorAll('[data-print-btn]').forEach(function (btn) {
       btn.addEventListener('click', function () {
