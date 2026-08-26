@@ -28,7 +28,22 @@
   .scroll-top,
   .lightbox,
   .gallery__zoom-hint,
-  .wire-diagram-frame__hint {
+  .wire-diagram-frame__hint,
+  .wifi-toolbar,
+  .wifi-header__back {
+    display: none !important;
+  }
+
+  .wifi-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wifi-event-block {
+    break-inside: avoid-page;
+  }
+
+  body[data-print-scope="comicio"] .wifi-event-block:not([data-event-slug="comicio"]),
+  body[data-print-scope="caminhada"] .wifi-event-block:not([data-event-slug="caminhada"]) {
     display: none !important;
   }
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Senhas Wi-Fi — Campanha Lula 2026</title>
+<meta name="description" content="Gera senhas novas e QR codes de acesso para as redes Wi-Fi do comício e da caminhada — Campanha Lula 2026.">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="stylesheet" href="assets/css/main.css?v=20260826a">
+<link rel="stylesheet" href="assets/css/components.css?v=20260826a">
+<link rel="stylesheet" href="assets/css/print.css?v=20260826a" media="print">
+</head>
+<body class="wifi-page">
+
+<header class="wifi-header">
+  <div class="wifi-header__inner">
+    <a class="wifi-header__back" href="index.html">← Manual Técnico</a>
+    <h1>Gerador de Senhas Wi-Fi</h1>
+    <p>Uma senha nova e um QR code novo a cada geração, para cada rede do comício e da caminhada. Os nomes de rede (SSID) são fixos; nada fica salvo — tudo é gerado aqui no seu navegador.</p>
+  </div>
+</header>
+
+<main class="wifi-main">
+
+  <div class="wifi-toolbar">
+    <span class="wifi-toolbar__note">Gere as senhas pouco antes de configurar os pontos de acesso, imprima ou mostre os QR codes na hora de distribuir.</span>
+    <div class="wifi-toolbar__actions">
+      <button class="wifi-btn wifi-btn--primary" id="wifi-generate-all" type="button">Gerar novas senhas</button>
+      <button class="wifi-btn wifi-btn--secondary" data-print-btn type="button">Imprimir tudo</button>
+      <button class="wifi-btn wifi-btn--secondary" data-print-btn="comicio" type="button">Imprimir Comício</button>
+      <button class="wifi-btn wifi-btn--secondary" data-print-btn="caminhada" type="button">Imprimir Caminhada</button>
+    </div>
+  </div>
+
+  <div class="wifi-confidential">
+    <span><strong>Uso interno</strong> — estas credenciais são para distribuição controlada em campo. Não publicar nem enviar por canais abertos.</span>
+  </div>
+
+  <div id="wifi-events"></div>
+
+  <p class="wifi-footnote">
+    Nomes de rede (SSID) confirmados com a produção. As redes do comício ainda precisam ser solicitadas com a produção antes do evento. Cada QR code segue o padrão Wi-Fi (<code>WIFI:T:WPA;S:ssid;P:senha;;</code>) e é lido nativamente pela câmera do celular. No comício, "Transmissão" (200 Mb) e "Vídeo" (100 Mb) são cabeadas, sem Wi-Fi. As 3 redes da caminhada ainda estão pendentes de confirmação — foram inferidas a partir da estrutura do trajeto.
+  </p>
+
+</main>
+
+<script src="assets/js/qrcode.js"></script>
+<script src="assets/js/wifi-generator.js"></script>
+</body>
+</html>
