@@ -528,12 +528,12 @@ table.data-table {
 .wire--ida { stroke: var(--color-accent); }
 .wire--volta { stroke: var(--blue); }
 .wire--led { stroke: var(--green-dark); stroke-width: 2.5; stroke-dasharray: 9 6; }
-.wire--tv { stroke: var(--purple); }
+.wire--tv { stroke: var(--yellow); }
 
 .wire-arrow--ida { fill: var(--color-accent); }
 .wire-arrow--volta { fill: var(--blue); }
 .wire-arrow--led { fill: var(--green-dark); }
-.wire-arrow--tv { fill: var(--purple); }
+.wire-arrow--tv { fill: var(--yellow); }
 
 .wire-legend {
   display: flex;
