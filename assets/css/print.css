@@ -38,8 +38,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .wifi-event-block {
-    break-inside: avoid-page;
+  .wifi-card {
+    break-inside: avoid;
   }
 
   body[data-print-scope="comicio"] .wifi-event-block:not([data-event-slug="comicio"]),
