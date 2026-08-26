@@ -931,14 +931,19 @@ table.data-table {
   text-anchor: middle;
 }
 
-.stage-plan-crowd {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  fill: var(--color-text-muted);
-  text-anchor: start;
+.stage-plan-cobertura {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+}
+
+.stage-plan-label--on-fill {
+  fill: var(--white);
+}
+
+.stage-plan-sub--on-fill {
+  fill: rgba(255, 255, 255, 0.85);
 }
 
 /* ---- Hub (index.html — seletor de formatos) ---- */
