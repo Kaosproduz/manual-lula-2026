@@ -191,6 +191,16 @@ button {
   stroke: currentColor;
 }
 
+.nav-group__num {
+  color: var(--color-accent-dark);
+  opacity: 0.75;
+}
+
+.nav-group__link.is-active .nav-group__num {
+  color: var(--white);
+  opacity: 0.85;
+}
+
 .nav-group__link:hover {
   background: var(--color-surface);
 }
@@ -209,12 +219,24 @@ button {
 }
 
 .nav-sub__link {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
   padding: 5px 10px;
   font-size: 12.5px;
   color: var(--color-text-muted);
   text-decoration: none;
   border-radius: 4px;
+}
+
+.nav-sub__num {
+  flex-shrink: 0;
+  width: 24px;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  opacity: 0.65;
 }
 
 .nav-sub__link:hover {
