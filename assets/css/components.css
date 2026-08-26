@@ -210,15 +210,15 @@
 }
 
 .img-disclaimer {
-  margin: 8px 0 0;
+  margin: 0;
   font-size: 10.5px;
   color: var(--color-text-muted);
   font-style: italic;
+  text-align: right;
 }
 
 .spec-card--media > .img-disclaimer {
-  margin: 0;
-  padding: 8px 20px 14px;
+  padding: 6px 14px;
 }
 
 /* ---- Bloco de proibição / atenção ---- */
