@@ -226,8 +226,9 @@
         </div>
 
         <h4 class="subsection__subtitle">Esquema — vista aérea</h4>
+        <button class="stage-plan-frame" type="button" aria-label="Ampliar esquema — vista aérea do palco">
         <div class="stage-plan-wrap">
-          <svg viewBox="0 0 700 380" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Esquema em vista aérea do palco, na horizontal: projeção pontilhada da cobertura de 16 por 10 metros envolvendo o palco de 10 por 8 metros, com passarela de 20 por 3 metros saindo do centro até o queijo, quadrado de 4 por 4 metros, à direita">
+          <svg viewBox="0 0 780 380" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Esquema em vista aérea do palco, na horizontal: projeção pontilhada da cobertura de 16 por 10 metros envolvendo o palco de 10 por 8 metros, com passarela de 20 por 3 metros saindo do centro até o queijo, quadrado de 4 por 4 metros, seguido da escada de acesso de 5 degraus vista de cima (só os pisos aparecem nessa vista)">
             <rect class="stage-plan-cobertura" x="10" y="40" width="200" height="320"/>
             <text class="stage-plan-label" x="110" y="26">Cobertura 16 × 10 m</text>
 
@@ -239,16 +240,29 @@
             <text class="stage-plan-label stage-plan-label--on-fill" x="110" y="195">Palco</text>
             <text class="stage-plan-sub stage-plan-sub--on-fill" x="110" y="211">10 × 8 m</text>
 
+            <rect class="stage-plan-stair" x="670" y="188" width="35" height="24"/>
+            <line class="stage-plan-stair-tread" x1="677" y1="188" x2="677" y2="212"/>
+            <line class="stage-plan-stair-tread" x1="684" y1="188" x2="684" y2="212"/>
+            <line class="stage-plan-stair-tread" x1="691" y1="188" x2="691" y2="212"/>
+            <line class="stage-plan-stair-tread" x1="698" y1="188" x2="698" y2="212"/>
+
             <line class="stage-plan-leader" x1="390" y1="230" x2="390" y2="250"/>
             <line class="stage-plan-leader" x1="630" y1="240" x2="630" y2="250"/>
+            <line class="stage-plan-leader" x1="688" y1="212" x2="688" y2="296"/>
 
             <text class="stage-plan-label" x="390" y="264">Passarela</text>
             <text class="stage-plan-sub" x="390" y="280">20 × 3 m</text>
 
             <text class="stage-plan-label stage-plan-label--accent" x="630" y="264">Queijo</text>
             <text class="stage-plan-sub" x="630" y="280">4 × 4 m</text>
+
+            <text class="stage-plan-label" x="688" y="310">Escada</text>
+            <text class="stage-plan-sub" x="688" y="326">largura mín. 1,20m</text>
+            <text class="stage-plan-sub" x="688" y="340">pisos 28–32cm (vista de cima)</text>
           </svg>
         </div>
+        <span class="wire-diagram-frame__hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
+        </button>
         <p class="img-disclaimer">Esquema meramente ilustrativo, fora de escala real.</p>
 
         <div class="spec-grid" style="margin-top:16px;">

@@ -881,6 +881,26 @@ table.data-table {
 
 /* ---- Esquema de palco (vista aérea — 2.1) ---- */
 
+.stage-plan-frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  text-align: left;
+  font: inherit;
+  appearance: none;
+}
+
+.stage-plan-frame:hover .wire-diagram-frame__hint,
+.stage-plan-frame:focus-visible .wire-diagram-frame__hint {
+  opacity: 1;
+}
+
 .stage-plan-wrap {
   overflow-x: auto;
   margin: 18px 0 8px;
@@ -899,7 +919,7 @@ table.data-table {
 
 .stage-plan-block {
   fill: var(--color-accent);
-  stroke: var(--color-accent-dark);
+  stroke: var(--color-text);
   stroke-width: 1.5;
 }
 
@@ -936,6 +956,17 @@ table.data-table {
   stroke: var(--color-text-muted);
   stroke-width: 1.5;
   stroke-dasharray: 6 4;
+}
+
+.stage-plan-stair {
+  fill: var(--color-accent);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.stage-plan-stair-tread {
+  stroke: var(--color-text);
+  stroke-width: 1;
 }
 
 .stage-plan-label--on-fill {
