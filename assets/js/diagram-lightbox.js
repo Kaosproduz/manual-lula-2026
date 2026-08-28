@@ -2,7 +2,7 @@
 // cópia em tamanho real dentro do lightbox (mesmo padrão de fechar da galeria).
 
 (function () {
-  const frames = document.querySelectorAll('.wire-diagram-frame, .stage-plan-frame');
+  const frames = document.querySelectorAll('.wire-diagram-frame, .stage-plan-frame, .aerial-diagram-frame');
   const lightbox = document.getElementById('diagram-lightbox');
   if (!frames.length || !lightbox) return;
 
@@ -10,7 +10,7 @@
   const closeBtn = lightbox.querySelector('.lightbox__close');
 
   const open = (frame) => {
-    const original = frame.querySelector('.wire-diagram, .stage-plan-wrap');
+    const original = frame.querySelector('.wire-diagram, .stage-plan-wrap, .aerial-diagram-wrap');
     if (!original) return;
     content.innerHTML = '';
     content.appendChild(original.cloneNode(true));

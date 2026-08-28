@@ -737,12 +737,36 @@ table.data-table {
 
 /* ---- Mapa esquemático de trajeto (vista aérea) ---- */
 
+.aerial-diagram-frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  text-align: left;
+  font: inherit;
+  appearance: none;
+}
+
+.aerial-diagram-frame:hover .wire-diagram-frame__hint,
+.aerial-diagram-frame:focus-visible .wire-diagram-frame__hint {
+  opacity: 1;
+}
+
 .aerial-diagram-wrap {
   overflow-x: auto;
   margin: 18px 0 8px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: #eef0ea;
+}
+
+.lightbox__diagram-content .aerial-diagram-wrap {
+  max-width: none;
+  width: min(1100px, 92vw);
 }
 
 .aerial-diagram-wrap svg {
@@ -855,18 +879,33 @@ table.data-table {
   color: var(--white);
 }
 
-.aerial-ambulance {
-  fill: var(--white);
-  stroke: var(--color-accent);
-  stroke-width: 2;
-}
-
 .aerial-icon--ambulance {
   color: var(--color-accent);
 }
 
 .aerial-icon--star {
   color: var(--color-accent);
+}
+
+.aerial-car--hydration {
+  fill: var(--blue);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.aerial-icon--hydration {
+  color: var(--white);
+}
+
+.aerial-follow-arrow {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+
+.aerial-arrowhead {
+  fill: var(--color-accent);
 }
 
 .aerial-label--tiny {
@@ -970,6 +1009,17 @@ table.data-table {
 }
 
 .stage-plan-stair-tread {
+  stroke: var(--color-text);
+  stroke-width: 1;
+}
+
+.stage-plan-ramp {
+  fill: var(--color-accent);
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+}
+
+.stage-plan-ramp-hatch {
   stroke: var(--color-text);
   stroke-width: 1;
 }
@@ -1426,6 +1476,29 @@ table.data-table {
   border-top: 1px solid var(--color-border);
   padding-top: 16px;
   line-height: 1.6;
+}
+
+/* ---- Verificação de Crachás ---- */
+
+.crachas-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.crachas-status--ok {
+  background: rgba(0, 185, 35, 0.15);
+  color: var(--green-dark);
+}
+
+.crachas-status--pending {
+  background: rgba(255, 212, 0, 0.3);
+  color: #7a5b00;
 }
 
 @media (max-width: 640px) {

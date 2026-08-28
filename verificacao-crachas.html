@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificação de Crachás — Campanha Lula 2026</title>
+<meta name="description" content="Lista de credenciamento da equipe para conferência de crachás no acesso — Campanha Lula 2026.">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="stylesheet" href="assets/css/main.css?v=20260828d">
+<link rel="stylesheet" href="assets/css/components.css?v=20260828d">
+<link rel="stylesheet" href="assets/css/print.css?v=20260828d" media="print">
+</head>
+<body class="wifi-page">
+
+<header class="wifi-header">
+  <div class="wifi-header__inner">
+    <a class="wifi-header__back" href="index.html">← Manual Técnico</a>
+    <h1>Verificação de Crachás</h1>
+    <p>Lista de credenciamento da equipe para conferência de crachás no acesso. Busque por nome ou equipe para localizar rapidamente um credenciado.</p>
+  </div>
+</header>
+
+<main class="wifi-main">
+
+  <div class="wifi-toolbar">
+    <div class="wifi-seed-field">
+      <label for="crachas-search">Buscar</label>
+      <input type="text" id="crachas-search" autocomplete="off" spellcheck="false" placeholder="nome ou equipe">
+      <span class="wifi-toolbar__note" id="crachas-count"></span>
+    </div>
+  </div>
+
+  <div class="wifi-confidential">
+    <span><strong>Lista placeholder</strong> — nomes em lorem ipsum, para teste de layout. Substituir pela lista oficial de credenciados antes do evento.</span>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Crachá</th><th>Nome</th><th>Equipe</th><th>Função</th><th>Status</th></tr>
+      </thead>
+      <tbody id="crachas-tbody"></tbody>
+    </table>
+  </div>
+
+  <p class="wifi-footnote">
+    Lista de exemplo com 100 registros gerados a partir de texto lorem ipsum, apenas para validar o layout de busca e conferência. Não representa a equipe real do evento.
+  </p>
+
+</main>
+
+<script src="assets/js/crachas-list.js"></script>
+</body>
+</html>
