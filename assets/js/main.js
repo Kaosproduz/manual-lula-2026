@@ -1,4 +1,21 @@
 // main.js — navegação: scrollspy da sidebar (destaca item ativo conforme o scroll)
+// e menus colapsáveis (grupos com subitens expandem/recolhem ao clicar no cabeçalho)
+
+(function () {
+  document.querySelectorAll('.sidebar__nav > ul > li').forEach((li) => {
+    const link = li.querySelector(':scope > .nav-group__link');
+    const sub = li.querySelector(':scope > .nav-sub');
+    if (!link || !sub) return;
+    link.setAttribute('aria-expanded', 'true');
+    link.addEventListener('click', (e) => {
+      // Só alterna expandir/recolher — não navega, pra não conflitar com o
+      // scrollspy (rolar até a seção reativaria o grupo que acabou de recolher).
+      e.preventDefault();
+      const collapsed = li.classList.toggle('is-collapsed');
+      link.setAttribute('aria-expanded', String(!collapsed));
+    });
+  });
+})();
 
 (function () {
   const navLinks = Array.from(document.querySelectorAll('.nav-group__link, .nav-sub__link'));
@@ -18,7 +35,8 @@
     if (!match) return;
     match.link.classList.add('is-active');
 
-    // Se for um subitem, também destaca o grupo (capítulo) pai
+    // Se for um subitem, também destaca o grupo (capítulo) pai — sem
+    // forçar reabertura caso o usuário tenha recolhido esse grupo.
     const parentGroup = match.link.closest('.nav-sub');
     if (parentGroup) {
       const prevLink = parentGroup.previousElementSibling;
