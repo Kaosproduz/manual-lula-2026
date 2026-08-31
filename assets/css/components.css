@@ -1218,6 +1218,48 @@ table.data-table {
   padding: 0 24px 72px;
 }
 
+.platform-highlight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-text);
+  color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-box);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.platform-highlight .icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--yellow);
+}
+
+.platform-highlight strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--yellow);
+  margin-bottom: 2px;
+}
+
+.platform-highlight span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.platform-highlight u {
+  color: var(--yellow);
+  font-weight: 700;
+  text-decoration-thickness: 1.5px;
+}
+
 .format-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
