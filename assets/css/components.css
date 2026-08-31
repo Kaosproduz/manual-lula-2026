@@ -613,13 +613,23 @@ table.data-table {
   display: block;
 }
 
-.gallery__item.table-thumb {
+.table-thumb-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.th-local-label {
   display: inline-block;
-  vertical-align: middle;
+  padding-left: 106px;
+}
+
+.gallery__item.table-thumb {
+  display: block;
+  flex-shrink: 0;
   width: 96px;
   height: 96px;
   aspect-ratio: 1 / 1;
-  margin-right: 8px;
   margin-bottom: 0;
   border-radius: 4px;
   box-shadow: none;
@@ -633,11 +643,10 @@ table.data-table {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  flex-shrink: 0;
   width: 96px;
   height: 96px;
   aspect-ratio: 1 / 1;
-  margin-right: 8px;
   border-radius: 4px;
   border: 1px dashed var(--color-border);
   background: var(--color-surface);
