@@ -587,6 +587,10 @@ table.data-table {
   margin: 18px 0 8px;
 }
 
+.gallery__item[hidden] {
+  display: none;
+}
+
 .gallery__item {
   position: relative;
   display: block;
@@ -607,6 +611,42 @@ table.data-table {
   object-fit: cover;
   transition: transform 0.35s ease;
   display: block;
+}
+
+.gallery__item.table-thumb {
+  display: inline-block;
+  vertical-align: middle;
+  width: 96px;
+  height: 96px;
+  aspect-ratio: 1 / 1;
+  margin-right: 8px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.gallery__item.table-thumb img {
+  transition: none;
+}
+
+.table-thumb--placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 96px;
+  height: 96px;
+  aspect-ratio: 1 / 1;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px dashed var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.table-thumb--placeholder .icon {
+  width: 28px;
+  height: 28px;
 }
 
 .gallery__item--contain img {
@@ -725,6 +765,74 @@ table.data-table {
 .lightbox__close .icon {
   width: 20px;
   height: 20px;
+}
+
+.lightbox__nav[hidden],
+.lightbox__download-all[hidden] {
+  display: none;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.lightbox__nav:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.lightbox__nav .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.lightbox__nav--prev { left: 20px; }
+.lightbox__nav--next { right: 20px; }
+
+.lightbox__counter {
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.lightbox__download-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--white);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.lightbox__download-all:hover {
+  background: var(--color-accent);
+  color: var(--white);
+}
+
+.lightbox__download-all .icon {
+  width: 14px;
+  height: 14px;
 }
 
 /* ---- Rodapé do documento ---- */

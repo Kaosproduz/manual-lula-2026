@@ -6,9 +6,9 @@
 <title>Caderno Técnico — Campanha Lula 2026 — Comício</title>
 <meta name="description" content="Requisitos mínimos, especificações e responsabilidades para execução de comício — Campanha Lula 2026.">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="stylesheet" href="assets/css/main.css?v=20260831a">
-<link rel="stylesheet" href="assets/css/components.css?v=20260831a">
-<link rel="stylesheet" href="assets/css/print.css?v=20260831a" media="print">
+<link rel="stylesheet" href="assets/css/main.css?v=20260831f">
+<link rel="stylesheet" href="assets/css/components.css?v=20260831f">
+<link rel="stylesheet" href="assets/css/print.css?v=20260831f" media="print">
 </head>
 <body>
 
@@ -28,6 +28,9 @@
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
   <symbol id="icon-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
   <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
 </svg>
 
 <div class="app-shell">
@@ -458,25 +461,59 @@
           <svg class="icon"><use href="#icon-alert-triangle"/></svg>
           <span>Saídas de emergência: faixas verdes com letras brancas, conforme padrão Corpo de Bombeiros, sempre visíveis e desobstruídas.</span>
         </div>
+
+        <div class="spec-card" style="margin-top:16px;">
+          <div class="spec-card__title">Pórtico de sinalização direcional (impressão)</div>
+          <ul>
+            <li>Estrutura: pórtico boxtruss Q30</li>
+            <li>Arte enquadrada em 6,60m × 1,60m</li>
+            <li>Medida a mais na lona serve para envelopar o boxtruss (laterais e topo)</li>
+          </ul>
+        </div>
+
         <div class="table-wrap" style="margin-top:16px;">
           <table class="data-table">
             <thead><tr><th>Local</th><th>Qtd.</th><th>Tamanho</th><th>Material</th></tr></thead>
             <tbody>
-              <tr><td>Posto médico</td><td>02</td><td>3m × 1m</td><td>PS com fita adesiva</td></tr>
-              <tr><td>Hidratação</td><td>05</td><td>2,95m × 65cm</td><td>Banner com ilhós</td></tr>
-              <tr><td>Entrada área alfa</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, boxtruss</td></tr>
-              <tr><td>Entrada público</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
-              <tr><td>Imprensa/staff</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
-              <tr><td>Banheiro masc./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
-              <tr><td>Banheiro fem./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
-              <tr><td>Área PCD</td><td>01</td><td>3,90m × 1m</td><td>Banner com ilhós, guarda-corpo</td></tr>
-              <tr><td>Backdrop área alfa (esquenta)</td><td>01</td><td>9,30m × 2,80m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
-              <tr><td>Backdrop público</td><td>01</td><td>10,30m × 2,80m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
-              <tr><td>Backdrop porta-vozes</td><td>01</td><td>a confirmar</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
-              <tr><td>Backdrop quebra queixo</td><td>01</td><td>3m × 2m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
+              <tr><td><button class="gallery__item table-thumb" type="button" data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-01.jpg" data-caption="Posto médico — estrutura montada (pórtico + banner)"><img src="assets/img/sinalizacao/posto-medico/posto-medico-01.jpg" alt="Posto médico — miniatura, clique para ver referências"></button>Posto médico</td><td>02</td><td>7,20m × 1,90m</td><td>Lona com ilhós, boxtruss</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Hidratação</td><td>05</td><td>2,95m × 65cm</td><td>Banner com ilhós</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Entrada área alfa</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, boxtruss</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Entrada público</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Imprensa/staff</td><td>01</td><td>6m × 1m</td><td>Banner com ilhós, tenda</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Banheiro masc./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Banheiro fem./PNE</td><td>variável</td><td>2m × 1m</td><td>PS com fita adesiva</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Área PCD</td><td>01</td><td>3,90m × 1m</td><td>Banner com ilhós, guarda-corpo</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Backdrop área alfa (esquenta)</td><td>01</td><td>9,30m × 2,80m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Backdrop público</td><td>01</td><td>10,30m × 2,80m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Backdrop porta-vozes</td><td>01</td><td>a confirmar</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
+              <tr><td><span class="table-thumb--placeholder" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>Backdrop quebra queixo</td><td>01</td><td>3m × 2m</td><td>Lona com ilhós, Q15 com estaiamento</td></tr>
             </tbody>
           </table>
         </div>
+
+        <!-- Demais imagens do grupo "posto-medico" (ocultas — usadas só pelo carrossel) -->
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-02.jpg" data-caption="Posto médico — banner, vista frontal">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-02.jpg" alt="Posto médico — banner, vista frontal">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-03.jpg" data-caption="Posto médico — banner, dimensões (7,20m × 1,90m)">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-03.jpg" alt="Posto médico — banner, dimensões">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-04.jpg" data-caption="Posto médico — banner, vista lateral">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-04.jpg" alt="Posto médico — banner, vista lateral">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-05.jpg" data-caption="Posto médico — pórtico, dimensões (vista frontal)">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-05.jpg" alt="Posto médico — pórtico, dimensões, vista frontal">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-06.jpg" data-caption="Posto médico — pórtico, dimensões (perspectiva)">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-06.jpg" alt="Posto médico — pórtico, dimensões, perspectiva">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-07.jpg" data-caption="Posto médico — banner sobre tenda, vista frontal">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-07.jpg" alt="Posto médico — banner montado sobre tenda, vista frontal">
+        </button>
+        <button class="gallery__item" type="button" hidden data-group="posto-medico" data-full="assets/img/sinalizacao/posto-medico/posto-medico-08.jpg" data-caption="Posto médico — banner sobre tenda, perspectiva">
+          <img src="assets/img/sinalizacao/posto-medico/posto-medico-08.jpg" alt="Posto médico — banner montado sobre tenda, perspectiva">
+        </button>
+
         <div class="spec-card" style="margin-top:16px;">
           <div class="spec-card__title">Estruturas autoportantes (Q15 com estaiamento)</div>
           <ul>
@@ -485,23 +522,6 @@
             <li>Backdrop porta-vozes — dimensões a confirmar</li>
             <li>Backdrop quebra queixo — lona 3m (C) × 2m (A)</li>
           </ul>
-        </div>
-
-        <div class="spec-card spec-card--media" style="margin-top:16px;">
-          <button class="gallery__item gallery__item--contain spec-card__image" type="button" style="aspect-ratio:1600/902;" data-full="assets/img/sinalizacao/portico-sinalizacao.jpg" data-caption="Pórticos de sinalização — dimensões e placas direcionais">
-            <img src="assets/img/sinalizacao/portico-sinalizacao.jpg" alt="Desenho técnico dos pórticos de sinalização, com dimensões da estrutura e placas direcionais para banheiro, saídas de emergência, entrada área alfa, imprensa/staff e PCD">
-            <span class="gallery__caption">Pórticos de sinalização</span>
-            <span class="gallery__zoom-hint"><svg class="icon"><use href="#icon-maximize"/></svg></span>
-          </button>
-          <p class="img-disclaimer">Imagem meramente ilustrativa.</p>
-          <div class="spec-card__body">
-            <div class="spec-card__title">Pórtico de sinalização direcional<span class="spec-card__meta">6,60m (L) × 5,90m (A)</span></div>
-            <ul>
-              <li>Estrutura: vão livre 6,00m, barras espaçadas 1,00m, base com afastamento de 2,30m entre pés</li>
-              <li>Lona com ilhós por barra: 6,10m × 1,10m</li>
-              <li>Placas direcionais: Banheiro, Saídas de Emergência, Entrada Área Alfa, Entrada Imprensa/Staff, Entrada PCD</li>
-            </ul>
-          </div>
         </div>
       </div>
 
@@ -1382,9 +1402,20 @@
   <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada">
     <svg class="icon"><use href="#icon-x"/></svg>
   </button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Imagem anterior" hidden>
+    <svg class="icon"><use href="#icon-chevron-left"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima imagem" hidden>
+    <svg class="icon"><use href="#icon-chevron-right"/></svg>
+  </button>
   <figure class="lightbox__figure">
     <img class="lightbox__img" src="" alt="">
     <figcaption class="lightbox__caption"></figcaption>
+    <span class="lightbox__counter" hidden></span>
+    <button class="lightbox__download-all" type="button" hidden>
+      <svg class="icon"><use href="#icon-download"/></svg>
+      Baixar todas
+    </button>
   </figure>
 </div>
 

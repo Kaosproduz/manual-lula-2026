@@ -6,9 +6,9 @@
 <title>Caderno Técnico — Campanha Lula 2026 — Conteúdos</title>
 <meta name="description" content="Referências de vídeo, áudio e impressos para produção de conteúdos — Campanha Lula 2026.">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="stylesheet" href="assets/css/main.css?v=20260831a">
-<link rel="stylesheet" href="assets/css/components.css?v=20260831a">
-<link rel="stylesheet" href="assets/css/print.css?v=20260831a" media="print">
+<link rel="stylesheet" href="assets/css/main.css?v=20260831f">
+<link rel="stylesheet" href="assets/css/components.css?v=20260831f">
+<link rel="stylesheet" href="assets/css/print.css?v=20260831f" media="print">
 </head>
 <body>
 
@@ -19,6 +19,8 @@
   <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
   <symbol id="icon-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
   <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></symbol>
   <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
   <symbol id="icon-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
 </svg>
@@ -201,9 +203,20 @@
   <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada">
     <svg class="icon"><use href="#icon-x"/></svg>
   </button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Imagem anterior" hidden>
+    <svg class="icon"><use href="#icon-chevron-left"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima imagem" hidden>
+    <svg class="icon"><use href="#icon-chevron-right"/></svg>
+  </button>
   <figure class="lightbox__figure">
     <img class="lightbox__img" src="" alt="">
     <figcaption class="lightbox__caption"></figcaption>
+    <span class="lightbox__counter" hidden></span>
+    <button class="lightbox__download-all" type="button" hidden>
+      <svg class="icon"><use href="#icon-download"/></svg>
+      Baixar todas
+    </button>
   </figure>
 </div>
 
