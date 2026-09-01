@@ -118,6 +118,7 @@ button {
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  min-width: 0;
   background: var(--white);
   border-right: 3px solid var(--color-text);
   padding: 24px 0 40px;

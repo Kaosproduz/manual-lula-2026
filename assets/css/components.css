@@ -638,6 +638,7 @@ table.data-table {
 .table-thumb-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -1050,6 +1051,13 @@ table.data-table {
 
 .aerial-arrowhead {
   fill: var(--color-accent);
+}
+
+.aerial-reserved {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
 }
 
 .aerial-label--tiny {
