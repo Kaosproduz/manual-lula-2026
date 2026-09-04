@@ -6,11 +6,85 @@
 <title>Verificação de Crachás — Campanha Lula 2026</title>
 <meta name="description" content="Lista de credenciamento da equipe para conferência de crachás no acesso — Campanha Lula 2026.">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="stylesheet" href="assets/css/main.css?v=20260831m">
-<link rel="stylesheet" href="assets/css/components.css?v=20260831m">
-<link rel="stylesheet" href="assets/css/print.css?v=20260831m" media="print">
+<link rel="stylesheet" href="assets/css/main.css?v=20260904a">
+<link rel="stylesheet" href="assets/css/components.css?v=20260904a">
+<link rel="stylesheet" href="assets/css/print.css?v=20260904a" media="print">
+<style>
+  .access-gate[hidden] {
+    display: none;
+  }
+  .access-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-text, #1a1a1a);
+    padding: 24px;
+  }
+  .access-gate__box {
+    background: var(--white, #fff);
+    border-radius: var(--radius, 6px);
+    padding: 32px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  }
+  .access-gate__box h2 {
+    margin: 0 0 8px;
+    font-family: var(--font-display, inherit);
+    font-size: 18px;
+  }
+  .access-gate__box p {
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--color-text-muted, #55504c);
+  }
+  .access-gate__box input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-border, #e2ddd6);
+    border-radius: var(--radius, 6px);
+    font-size: 14px;
+  }
+  .access-gate__box button {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: var(--radius, 6px);
+    background: var(--color-accent, #fd0000);
+    color: #fff;
+    font-family: var(--font-display, inherit);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .access-gate__error {
+    margin: 10px 0 0;
+    color: var(--color-accent, #fd0000);
+    font-size: 13px;
+  }
+  body.wifi-page.is-locked > *:not(.access-gate) {
+    display: none;
+  }
+</style>
 </head>
-<body class="wifi-page">
+<body class="wifi-page is-locked">
+
+<div class="access-gate" id="access-gate">
+  <form class="access-gate__box" id="access-gate-form">
+    <h2>Acesso restrito</h2>
+    <p>Digite a senha para ver a lista de credenciamento.</p>
+    <input type="password" id="access-gate-input" autocomplete="off" placeholder="Senha" autofocus>
+    <button type="submit">Entrar</button>
+    <p class="access-gate__error" id="access-gate-error" hidden>Senha incorreta.</p>
+  </form>
+</div>
+<script src="assets/js/crachas-auth.js"></script>
 
 <header class="wifi-header">
   <div class="wifi-header__inner">
